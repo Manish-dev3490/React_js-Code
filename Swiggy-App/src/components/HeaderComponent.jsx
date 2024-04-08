@@ -3,7 +3,7 @@
  export const HeaderComponent=()=>{
     return (
         <div className="Header">
-            <div>Food Paradise</div>
+            <h2>Food Paradise</h2>
             <div className="search-box">
                 <input type="text" />
                 <button className="search-btn">Search</button>
