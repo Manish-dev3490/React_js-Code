@@ -1,0 +1,1 @@
+// In body component we have to fetch restaurents card with their live information which we can do through the swiggy orignal production api
