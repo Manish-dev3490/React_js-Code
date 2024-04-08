@@ -1,6 +1,6 @@
 // I am creating Header  Component for my website  component is anything you can see in application is a component functional based component is just normal javascript function which rreturn the peice of jsx code
 
-const HeaderComponent=()=>{
+ export const HeaderComponent=()=>{
     return (
         <div className="Header">
             <div>Food Paradise</div>
