@@ -1,13 +1,15 @@
 import { useState } from "react"
+
+
+
 // I am creating Header  Component for my website  component is anything you can see in application is a component functional based component is just normal javascript function which rreturn the peice of jsx code
 
+export const HeaderComponent = () => {
+    // I have to put login and logout functionality in my header which can be done through hooks because they have such special powers
 
-// I have to put login and logout functionality in my header which can be done through hooks because they have such special powers
-
- export const HeaderComponent=()=>{
-
-    const [LoginStatus,SetLoginStatus]=useState("Login");
-    let status="Login";
+    const importantHook = useState("Login");
+    const [LoginStatus, SetLoginStatus] = importantHook;
+    let status = "Login";
     return (
         <div className="Header">
             <h2>Food Paradise</h2>
@@ -21,8 +23,8 @@ import { useState } from "react"
                     <li>About</li>
                     <li>Contact</li>
                     <li>Help</li>
-                    <button className="log-or-not" onClick={()=>{
-                        LoginStatus==="Login"?SetLoginStatus("Logout"):SetLoginStatus("Login");
+                    <button className="log-or-not" onClick={() => {
+                        LoginStatus === "Login" ? SetLoginStatus("Logout") : SetLoginStatus("Login");
                     }}>{LoginStatus}</button>
                 </ul>
             </div>
