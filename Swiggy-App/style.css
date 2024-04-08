@@ -19,7 +19,7 @@
   font-size: 28px;
 }
 .navigation-bar {
-  width: 23%;
+  width: 29%;
 }
 .navigation-bar ul {
   display: flex;
@@ -56,4 +56,11 @@
   padding-block: 10px;
   letter-spacing: 0.2;
   font-size: 1rem;
+}
+
+.log-or-not{
+    padding-block: 8px;
+  padding-inline: 10px;
+  font-size: 15px;
+  cursor: pointer;
 }
