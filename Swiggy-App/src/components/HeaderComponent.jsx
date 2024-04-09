@@ -9,7 +9,6 @@ export const HeaderComponent = () => {
 
     const importantHook = useState("Login");
     const [LoginStatus, SetLoginStatus] = importantHook;
-    let status = "Login";
     return (
         <div className="Header">
             <h2>Food Paradise</h2>

@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Manish-dev3490/React_js-Code#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "remixicon": "^4.2.0"
   }
 }
