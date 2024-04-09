@@ -8,7 +8,7 @@
 .Header {
   height: 6rem;
   width: 100%;
-  background-color:azure;
+  background-color: #f1b170;
   color: black;
   display: flex;
   justify-content: space-between;
@@ -19,7 +19,7 @@
   font-size: 28px;
 }
 .navigation-bar {
-  width: 29%;
+  width: 30%;
 }
 .navigation-bar ul {
   display: flex;
@@ -36,15 +36,13 @@
   width: 300px;
   height: 40px;
   border-radius: 0.3rem;
-  padding-inline-start:14px;
+  padding-inline-start: 14px;
   font-size: 16px;
-
-
 }
-.search-box input:focus{
-    padding-inline-start:14px;
-    font-size: 16px;
-    color: black;
+.search-box input:focus {
+  padding-inline-start: 14px;
+  font-size: 16px;
+  color: black;
 }
 .search-box {
   display: flex;
@@ -58,37 +56,69 @@
   font-size: 1rem;
 }
 
-.log-or-not{
-    padding-block: 8px;
+.log-or-not {
+  padding-block: 8px;
   padding-inline: 10px;
   font-size: 15px;
   cursor: pointer;
 }
-.Resta-list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-block: 20px;
-    padding-inline: 20px;
-    gap: 20px;
-    flex-wrap: wrap;
-
+.Resta-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 20px;
+  padding-inline: 20px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
-.Resta-card{
-    height: 300px;
-    width: 250px;
-    background-color: rgb(247, 247, 247);
+.Resta-card {
+  height: 340px;
+  width: 250px;
+  background-color: rgb(247, 247, 247);
+  padding-inline: 10px;
+  padding-block: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.Resta-card img {
+  height: 70%;
+  width: 100%;
+}
+.Resta-card:hover {
+  border: 1px solid black;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+  gap: 3px;
+}
+.cuisines {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card-heading {
+  font-size: 21px;
+}
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.Hero-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block-start: 15px;
+}
+.top-restaurents-card{
     padding-inline: 10px;
     padding-block: 10px;
-    border-radius: 10px;
+    /* background-color: azure; */
     cursor: pointer;
-
-
-}
-.Resta-card img{
-    height: 70%;
-    width: 100%;
-}
-.Resta-card:hover{
-    border: 1px solid black;
 }
