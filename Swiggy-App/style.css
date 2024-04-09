@@ -8,7 +8,7 @@
 .Header {
   height: 6rem;
   width: 100%;
-  background-color: #eea209;
+  background-color: #fbba38;
   color: black;
   display: flex;
   justify-content: space-between;
@@ -63,4 +63,31 @@
   padding-inline: 10px;
   font-size: 15px;
   cursor: pointer;
+}
+.Resta-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 20px;
+    padding-inline: 20px;
+    gap: 20px;
+
+}
+.Resta-card{
+    height: 300px;
+    width: 250px;
+    background-color: rgb(247, 247, 247);
+    padding-inline: 10px;
+    padding-block: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
+
+}
+.Resta-card img{
+    height: 70%;
+    width: 100%;
+}
+.Resta-card:hover{
+    border: 1px solid black;
 }
