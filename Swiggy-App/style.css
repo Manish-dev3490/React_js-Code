@@ -122,3 +122,8 @@
     /* background-color: azure; */
     cursor: pointer;
 }
+.top-rated-filter{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
