@@ -1,6 +1,7 @@
 import { Restacard } from "./Restacard";
 import { useEffect, useState } from "react";
 import { ShimmerUi } from "./shimmerUI";
+import { Link } from "react-router-dom";
 // In body component we have to fetch restaurents card with their live information which we can do through the swiggy orignal production api
 
 export const BodyComponent = () => {
@@ -31,6 +32,7 @@ export const BodyComponent = () => {
         Fetchdata();
     }, []);
 
+    console.log(FilterList);
   
 
     return  dataList.length === 0 ? <ShimmerUi/>:(
@@ -73,10 +75,13 @@ export const BodyComponent = () => {
             <div className="Resta-list">
                 {
 
-                    FilterList.map((card, index) => {
+                    FilterList.map((card) => {
                         return (
 
-                            <Restacard key={index} resData={card.info} />
+                       
+                           <Link to={"/restaurent/" + card.info.id}> 
+                           <Restacard  resData={card.info} />
+                           </Link>
 
                         );
                     })

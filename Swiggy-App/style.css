@@ -76,6 +76,10 @@
   gap: 30px;
   flex-wrap: wrap;
 }
+.Resta-list a{
+  text-decoration: none;
+  color: black;
+}
 .Resta-card {
   height: 340px;
   width: 250px;
@@ -149,4 +153,42 @@
   padding-block: 10px;
   border-radius: 10px;
   cursor: pointer;
+}
+.Restaurent-detail-page{
+  flex-direction: column;
+  align-items: center;
+  /* padding-block: 25px; */
+  display: flex;
+  border-block-start: 1px solid black;
+  background-color: aliceblue;
+}
+.intro-card{
+  height: 349px;
+  width: 590px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline-start: 0px;
+  padding-block: 45px;
+  border-radius: 12px;
+
+}
+.information-menu{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 10px;
+
+}
+.first-section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.para-info{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
