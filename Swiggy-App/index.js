@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { AboutPage } from "./src/components/About";
 import { HelpPage } from "./src/components/Help";
 import { Error } from "./src/components/Error";
-
+import { ContactPage } from "./src/components/contact";
 // I am making a whole Application component in which my header hero section and footer will come
 const ApplicationMainDiv = () => {
     return (
@@ -35,6 +35,10 @@ const approuter = createBrowserRouter([
             {
                 path: "/help",
                 element: <HelpPage></HelpPage>
+            },
+            {
+                path: "/contact",
+                element: <ContactPage></ContactPage>
             }
         ],
         errorElement: <Error />

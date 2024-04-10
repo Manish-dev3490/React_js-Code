@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import {Link} from "react-router-dom"
 
 // I am creating Header  Component for my website  component is anything you can see in application is a component functional based component is just normal javascript function which rreturn the peice of jsx code
 export const HeaderComponent = () => {
@@ -13,10 +14,10 @@ export const HeaderComponent = () => {
             
             <div className="navigation-bar">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Help</li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/About">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/help">Help</Link></li>
                     <button className="log-or-not" onClick={() => {
                         LoginStatus === "Login" ? SetLoginStatus("Logout") : SetLoginStatus("Login");
                     }}>{LoginStatus}</button>
