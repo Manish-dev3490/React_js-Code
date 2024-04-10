@@ -1,5 +1,4 @@
 // I am making the About page for  changing the page 
-import { HeaderComponent } from "./HeaderComponent";
 
 export const AboutPage=()=>{
     return (

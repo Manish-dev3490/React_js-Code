@@ -1,5 +1,6 @@
 import { Restacard } from "./Restacard";
 import { useEffect, useState } from "react";
+import { ShimmerUi } from "./shimmerUI";
 // In body component we have to fetch restaurents card with their live information which we can do through the swiggy orignal production api
 
 export const BodyComponent = () => {
@@ -25,12 +26,15 @@ export const BodyComponent = () => {
         }
     };
 
+
     useEffect(() => {
         Fetchdata();
     }, []);
 
-    console.log(dataList);
-    return (
+  
+
+    return  dataList.length === 0 ? <ShimmerUi/>:(
+
         <div className="Hero-section">
             <div className="top-rated-filter">
                 <div className="search-box">
@@ -56,10 +60,10 @@ export const BodyComponent = () => {
                 <button
                     className="top-restaurents-card"
                     onClick={() => {
-                        const filterResta = FilterList.filter((check) => {
-                            return check.info.avgRating < 4;
+                        const filterRestarents = dataList.filter((check) => {
+                            return check.info.avgRating > 4.2;
                         });
-                        SetFilterList(filterResta);
+                        SetFilterList(filterRestarents);
                     }}
                 >
                     Top Rated Restaurents
@@ -67,9 +71,18 @@ export const BodyComponent = () => {
             </div>
 
             <div className="Resta-list">
-                {FilterList.map((card, index) => {
-                    return <Restacard key={index} resData={card.info} />;
-                })}
+                {
+
+                    FilterList.map((card, index) => {
+                        return (
+
+                            <Restacard key={index} resData={card.info} />
+
+                        );
+                    })
+
+
+                }
             </div>
         </div>
     );

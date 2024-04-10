@@ -1,5 +1,4 @@
 // I am making the Help page for  changing the page 
-import { HeaderComponent } from "./HeaderComponent";
 
 export const HelpPage=()=>{
     return (
