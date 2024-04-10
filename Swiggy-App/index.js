@@ -8,6 +8,7 @@ import { AboutPage } from "./src/components/About";
 import { HelpPage } from "./src/components/Help";
 import { Error } from "./src/components/Error";
 import { ContactPage } from "./src/components/Contact";
+import { RestaurentDetailPage } from "./src/components/RestaurentDetail";
 // I am making a whole Application component in which my header hero section and footer will come
 const ApplicationMainDiv = () => {
     return (
@@ -39,6 +40,10 @@ const approuter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <ContactPage></ContactPage>
+            },
+            {
+                path:"/restaurent/:resId",
+                element:<RestaurentDetailPage></RestaurentDetailPage>
             }
         ],
         errorElement: <Error />
