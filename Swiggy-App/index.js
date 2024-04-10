@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { HeaderComponent } from "./src/components/HeaderComponent";
 import { BodyComponent } from "./src/components/BodyComponent";
 import 'remixicon/fonts/remixicon.css'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { AboutPage } from "./src/components/About";
 import { HelpPage } from "./src/components/Help";
 import { Error } from "./src/components/Error";
@@ -13,7 +13,7 @@ const ApplicationMainDiv = () => {
     return (
         <>
             <HeaderComponent />
-            <BodyComponent />
+            <Outlet></Outlet>
         </>
     )
 }
@@ -21,19 +21,25 @@ const ApplicationMainDiv = () => {
 const approuter = createBrowserRouter([
     {
         path: "/",
-        element: <ApplicationMainDiv/>,
-        errorElement:<Error/>
-        
-    },
-    
-    {
-        path: "/about",
-        element: <AboutPage/>,
-    },
-    {
-        path: "/help",
-        element:<HelpPage/> ,
+        element: <ApplicationMainDiv />,
+        children: [
+            {
+                path: "/",
+                element: <BodyComponent></BodyComponent>
+            },
+            {
+                path: "/about",
+                element: <AboutPage></AboutPage>
+            }
+            ,
+            {
+                path: "/help",
+                element: <HelpPage></HelpPage>
+            }
+        ],
+        errorElement: <Error />
+
     }
 ])
 const root = ReactDOM.createRoot(document.querySelector(".container"));
-root.render(<RouterProvider router={approuter}/>);
+root.render(<RouterProvider router={approuter} />);
