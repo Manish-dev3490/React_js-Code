@@ -21,11 +21,7 @@ import { ProductCard } from "./ProductCard"
             <h2>Popular Products</h2>
             <div className="products-list">
             <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-
+    
             </div>
 
           </div>
