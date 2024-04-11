@@ -21,6 +21,8 @@ body,html{
   align-items: center;
   justify-content: space-around;
   padding-block-start: 10px;
+  position: fixed;
+  background-color: azure;
 }
 .navigation-section ul {
   align-items: center;
@@ -93,4 +95,5 @@ i {
 }
 .hero-section{
     padding-inline: 20px;
+    padding-block: 80px;
 }
