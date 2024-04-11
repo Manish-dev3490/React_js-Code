@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 *,
 *::after,
 *::before {
@@ -6,10 +6,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-body,html{
-    font-family: Public Sans;
+body,
+html {
+  font-family: Public Sans;
   background-color: azure;
-
 }
 
 .Header {
@@ -63,37 +63,63 @@ i {
 .navigation-section ul li {
   font-size: 1.1rem;
 }
-.hero-image img{
-    height: 700px;
-    width: 100%;
-    border-radius: 4px;
+.hero-image img {
+  height: 700px;
+  width: 100%;
+  border-radius: 4px;
 }
-.shipped-information{
-    height: 300px;
+.shipped-information {
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.products-button{
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 90px;
-    display: flex;
-    padding-block-end: 20px;
+.products-button {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 90px;
+  display: flex;
+  padding-block-end: 20px;
 }
 .products-button button {
-    background-color: #fc6262;
-    padding-inline: 25px;
-    padding-block: 24px;
-    font-size: 18px;
-    border: navajowhite;
-    border-radius: 7px;
-    cursor: pointer;
+  background-color: #fc6262;
+  padding-inline: 25px;
+  padding-block: 24px;
+  font-size: 18px;
+  border: navajowhite;
+  border-radius: 7px;
+  cursor: pointer;
 }
-.products-button button:hover{
-    transform: scale(1.1);
+.products-button button:hover {
+  transform: scale(1.1);
 }
-.hero-section{
-    padding-inline: 20px;
-    padding-block: 80px;
+.hero-section {
+  padding-block: 80px;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-image {
+  width: 100%;
+}
+.product-card {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-card img {
+  height: 60%;
+  width: 100%;
+}
+
+.products-list {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  gap: 30px;
 }

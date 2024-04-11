@@ -1,3 +1,4 @@
+import { ProductCard } from "./ProductCard"
 // In this hero section commponent i  willl make the hero section part of the website
 
  export const HeroSection = () => {
@@ -16,6 +17,17 @@
                     <button><i className="ri-bank-card-line"></i> Secure Payment</button>
                 </div>
             </div>
+
+            <h2>Popular Products</h2>
+            <div className="products-list">
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+
+            </div>
+
           </div>
         </>
     )
