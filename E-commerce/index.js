@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client"
 import { HeaderComponent } from "./src/components/HeaderComponent";
 import { HeroSection } from "./src/components/HeroSection";
+import { FooterLayout } from "./src/components/Footer";
 
 
 
@@ -11,6 +12,7 @@ const FullApplicationArea=()=>{
         <>
         <HeaderComponent/>
         <HeroSection/>
+        <FooterLayout/>
         </>
     )
 }

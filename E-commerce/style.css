@@ -128,27 +128,30 @@ i {
   width: 95%;
   gap: 30px;
 }
-.product-card:hover{
-    cursor: pointer;
+.product-card:hover {
+  cursor: pointer;
 
-    border: 1px solid black;
+  border: 1px solid black;
 }
-.product-card button{
-    font-size: 18px;
+.product-card button {
+  font-size: 18px;
   padding-block: 4px;
   background-color: black;
   border: none;
   color: white;
   border-radius: 5px;
   cursor: pointer;
-
 }
-.product-card button:hover{
-    background-color: white;
-    color: black;
+.product-card button:hover {
+  background-color: white;
+  color: black;
 }
-.hero-section  h2{
-    font-size: 30px;
-    position: relative;
-    bottom: 20px;
+.hero-section h2 {
+  font-size: 30px;
+  position: relative;
+  bottom: 20px;
+}
+footer {
+  height: 40px;
+  width: 100%;
 }
