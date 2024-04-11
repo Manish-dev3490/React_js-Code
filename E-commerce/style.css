@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body,html{
+    font-family: Public Sans;
 }
 
 .Header {
@@ -14,21 +18,21 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* padding-inline: 3.5rem; */
 }
 .navigation-section ul {
-    align-items: center;
-    gap: 2rem;
-    display: flex;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
 }
 
 .navigation-section ul li {
   list-style: none;
+  cursor: pointer;
 }
 .login-cart-darkmode {
   display: flex;
   align-items: center;
-  gap: 1.7rem;
+  gap: 1.5rem;
 }
 .login-logout {
   font-size: 1rem;
@@ -36,10 +40,21 @@
   height: 33px;
   cursor: pointer;
 }
-i{
-    font-size: 24px;
-
+i {
+  font-size: 24px;
 }
-.dark-mode{
-    display: none;
+.dark-mode {
+  display: none;
+}
+.heading {
+  font-size: 1.4rem;
+}
+.heading span {
+  color: red;
+}
+.heading:hover {
+  cursor: pointer;
+}
+.navigation-section ul li {
+  font-size: 1.1rem;
 }
