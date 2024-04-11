@@ -112,7 +112,7 @@ i {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   padding-inline: 8px;
   padding-block: 8px;
 }
