@@ -1,0 +1,1 @@
+// In this hero section commponent i  willl make the hero section part of the website
