@@ -10,7 +10,7 @@
         <div className="product-card">
             <img src={image} />
             <p>{category} </p>
-                <p>Price {price} </p>
+                <p>Price Rs {Math.floor(price)} </p>
                 <button className="Add-to-cart-btn">Add to cart</button>
         </div>
     )
