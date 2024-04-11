@@ -3,7 +3,7 @@ import 'remixicon/fonts/remixicon.css'
 
  export const HeaderComponent=()=>{
     return (
-        <div className="Header">
+        <header className="Header">
             <div className="logo-section">
                 <h3>Apna <span>Bazaar</span></h3>
             </div>
@@ -21,11 +21,11 @@ import 'remixicon/fonts/remixicon.css'
             <div className="login-cart-darkmode">
                 <div className="light-darkmode">
                 <i className="ri-sun-fill"></i>
-                <i className="ri-moon-fill"></i>
+                <i className="ri-moon-fill dark-mode" ></i>
                 </div>
-                <div className="login-logout"></div>
+                <button className="login-logout">Login</button>
                 <div className="cart"><i className="ri-shopping-cart-line"></i></div>
             </div>
-        </div>
+        </header>
     )
 }
