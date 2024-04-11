@@ -5,7 +5,7 @@ import 'remixicon/fonts/remixicon.css'
     return (
         <header className="Header">
             <div className="logo-section">
-                <h3 className='heading'>Apna <span>Bazaar</span></h3>
+                <h3 className='heading'>Explore<span> Mart</span></h3>
             </div>
 
             <div className="navigation-section">

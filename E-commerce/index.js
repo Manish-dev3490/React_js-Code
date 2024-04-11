@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 import { HeaderComponent } from "./src/components/HeaderComponent";
+import { HeroSection } from "./src/components/HeroSection";
 
 
 
@@ -9,6 +10,7 @@ const FullApplicationArea=()=>{
     return (
         <>
         <HeaderComponent/>
+        <HeroSection/>
         </>
     )
 }

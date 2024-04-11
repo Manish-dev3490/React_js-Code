@@ -8,16 +8,19 @@
 }
 body,html{
     font-family: Public Sans;
+  background-color: azure;
+
 }
 
 .Header {
   height: 5rem;
   width: 100%;
-  background-color: azure;
+  border-block-end: 1px solid black;
   color: black;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding-block-start: 10px;
 }
 .navigation-section ul {
   align-items: center;
@@ -57,4 +60,37 @@ i {
 }
 .navigation-section ul li {
   font-size: 1.1rem;
+}
+.hero-image img{
+    height: 700px;
+    width: 100%;
+    border-radius: 4px;
+}
+.shipped-information{
+    height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.products-button{
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 90px;
+    display: flex;
+    padding-block-end: 20px;
+}
+.products-button button {
+    background-color: #fc6262;
+    padding-inline: 25px;
+    padding-block: 24px;
+    font-size: 18px;
+    border: navajowhite;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.products-button button:hover{
+    transform: scale(1.1);
+}
+.hero-section{
+    padding-inline: 20px;
 }
