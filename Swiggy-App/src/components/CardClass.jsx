@@ -3,17 +3,17 @@ import React from "react";
   export class CardClass extends React.Component{
     constructor(props){
         super(props)
-        console.log("child constructor called");
+        console.log(this.props.name +"child constructor called");
 
     }
 
     componentDidMount(){
-        console.log("child component did mount called ");
+        console.log(this.props.name+"child component did mount called ");
     }
 
     render(){
         const {name , location , education}=this.props;
-        console.log("child render called ");
+        console.log(this.props.name+"child render called ");
         return (
             <>
             <h2>{name}</h2>

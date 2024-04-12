@@ -25,7 +25,10 @@ import { CardClass } from "./CardClass";
         return (
             <>
                 <p>Hello  to  the rect js world</p>
-                <CardClass name="manish" education="bca" location="delhi"/>
+                <CardClass name="first" education="bca" location="delhi"/>
+                <CardClass name="second" education="btech" location="patna"/>
+                <CardClass name="third" education="bsc" location="ranchi"/>
+
                 
 
             </>
