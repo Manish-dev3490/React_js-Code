@@ -1,39 +1,32 @@
 // in this file i  am making a class based component which is use in traditional core reacts 
 import React from "react";
-
+import { CardClass } from "./CardClass";
   class RestaData extends React.Component{
    
     constructor(props){
         super(props);
-        this.state={
-            count :0,
-            count2:1
-        }
+       
+        console.log("parent constructor call");
        
     }
 
-   
+    componentDidMount(){
+        console.log("parent componentDidMount call");
+
+    }
 
     
     render (){
 
       
-        const {Name,Location,Classes}=this.props;
-        const {count,count2}=this.state;
+       
+        console.log("parent render call call");
 
         return (
             <>
-            <h2>{Name}</h2>
-            <h2>{Location}</h2>
-            <h2>{Classes}</h2>
-            <button onClick={()=>{
-                this.setState({
-                    count:count + 1,
-
-                })
+                <p>Hello  to  the rect js world</p>
+                <CardClass name="manish" education="bca" location="delhi"/>
                 
-            }}>{count}</button>
-
 
             </>
         )
