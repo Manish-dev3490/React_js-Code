@@ -32,7 +32,6 @@ export const BodyComponent = () => {
         Fetchdata();
     }, []);
 
-    console.log(FilterList);
   
 
     return  dataList.length === 0 ? <ShimmerUi/>:(

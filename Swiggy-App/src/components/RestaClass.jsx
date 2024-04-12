@@ -1,39 +1,43 @@
-// in this file i  am making a class based component which is use in traditional core reacts 
+// in this file i  am making a class based component which is use in traditional core reacts
 import React from "react";
-import { CardClass } from "./CardClass";
-  class RestaData extends React.Component{
-   
-    constructor(props){
+
+class RestaData extends React.Component {
+    constructor(props) {
         super(props);
-       
-        console.log("parent constructor call");
-       
+
+
+
+        this.state = {
+           userInfo:{
+            
+           }
+        };
     }
 
-    componentDidMount(){
-        console.log("parent componentDidMount call");
-
-    }
-
-    
-    render (){
-
+    async componentDidMount() {
+        const response = await fetch(
+            "https://api.github.com/users/Manish-dev3490"
+        );
+        const json = await response.json();
+        this.setState({
+            userInfo:json,
+        })
       
-       
-        console.log("parent render call call");
+
+    }
+
+    render() {
+        const { id,node_id } = this.state.userInfo;
 
         return (
             <>
-                <p>Hello  to  the rect js world</p>
-                <CardClass name="first" education="bca" location="delhi"/>
-                <CardClass name="second" education="btech" location="patna"/>
-                <CardClass name="third" education="bsc" location="ranchi"/>
-
-                
-
+                <p>{id}</p>
+                <p>{node_id}</p>
             </>
-        )
+        );
     }
+
+    
 }
 
 export default RestaData;
