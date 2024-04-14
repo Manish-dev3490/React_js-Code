@@ -17,7 +17,7 @@ export const HeaderComponent = () => {
             
             <div className="navigation-bar">
                 <ul>
-                    <li className="on-or-not">Online:{onlineStatus===true?"🟢" : "🔴"}  </li>
+                    <li className="on-or-not">Online:{onlineStatus===true?"✅" : "🔴"}  </li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/About">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>

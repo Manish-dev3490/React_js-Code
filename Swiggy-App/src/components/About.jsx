@@ -1,6 +1,6 @@
 // I am making the About page for  changing the page 
 
-export const AboutPage=()=>{
+ const Aboutpage=()=>{
     return (
         <>
         <h2>This is the About Page</h2>
@@ -8,3 +8,4 @@ export const AboutPage=()=>{
         </>
     )
 }
+export  default Aboutpage;
