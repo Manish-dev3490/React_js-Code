@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import useRestaMenuData from "../utils/useRestaMenuData";
-// In this component i will make a detail page of restaurents by  there id and this  concept is known as dynamically routing a diffrent url components will inside my url
 
+
+// In this component i will make a detail page of restaurents by  there id and this  concept is known as dynamically routing a diffrent url components will inside my url
 export const RestaurentDetailPage = () => {
 
 
@@ -9,7 +10,9 @@ export const RestaurentDetailPage = () => {
 
     const RestaMenuData = useRestaMenuData(resId);
 
-    const { city, id, labels, totalRatingsString, costForTwoMessage, avgRating, cloudinaryImageId, name, feeDetails } = RestaMenuData;
+    const { city, totalRatingsString, costForTwoMessage, avgRating, cloudinaryImageId, name, feeDetails } = RestaMenuData;
+
+
 
     return (
         <div className="Restaurent-detail-page">
