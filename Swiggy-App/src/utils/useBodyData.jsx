@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react"
-import { Api_data } from "./constant";
 // In this  file i am making a custom hook for optimizing the body component which is having more than one responibility and not following single responsibility principle
 
 

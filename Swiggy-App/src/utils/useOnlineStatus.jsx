@@ -1,26 +1,20 @@
-// in this file i  am adding a feature of showing online and offline status to a user
-
-import { useEffect , useState} from "react";
+import { useEffect, useState } from "react";
 
 const useOnlineStatus = () => {
+  const [onlineStatus, setOnlineStatus] = useState(true);
 
-    const {OnlineState,setOnlineState}=useState(true)
-    useEffect(() => {
+  useEffect(() => {
+    window.addEventListener("offline", () => {
+      setOnlineStatus(false);
+    });
 
-        window.addEventListener("offline", () => {
-            setOnlineState(false)
-        });
+    window.addEventListener("online", () => {
+      setOnlineStatus(true);
+    });
+  }, []);
 
-        window.addEventListener("online", () => {
-            setOnlineState(true)
-        });
-
-
-      
-    }, [])
-
-
-    return OnlineState;
-}
+  // boolean value
+  return onlineStatus;
+};
 
 export default useOnlineStatus;
