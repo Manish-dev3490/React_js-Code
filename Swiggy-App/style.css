@@ -19,7 +19,7 @@
   font-size: 28px;
 }
 .navigation-bar {
-  width: 30%;
+  width: 40%;
 }
 .navigation-bar ul {
   display: flex;
@@ -191,4 +191,8 @@
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.on-or-not{
+  display: flex;
+  align-items: center;
 }

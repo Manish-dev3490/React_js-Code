@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {Link} from "react-router-dom"
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // I am creating Header  Component for my website  component is anything you can see in application is a component functional based component is just normal javascript function which rreturn the peice of jsx code
 export const HeaderComponent = () => {
@@ -7,6 +8,8 @@ export const HeaderComponent = () => {
 
     const importantHook = useState("Login");
     const [LoginStatus, SetLoginStatus] = importantHook;
+    const  onlineStatus=useOnlineStatus();
+
     
     return (
         <div className="Header">
@@ -14,6 +17,7 @@ export const HeaderComponent = () => {
             
             <div className="navigation-bar">
                 <ul>
+                    <li className="on-or-not">Online:{onlineStatus===true?"🟢" : "🔴"}  </li>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/About">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
