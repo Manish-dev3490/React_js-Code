@@ -3,6 +3,7 @@ import useBodydata from "../utils/useBodyData";
 import { useState } from "react";
 import { ShimmerUi } from "./shimmerUI";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // In body component we have to fetch restaurents card with their live information which we can do through the swiggy orignal production api
 
 export const BodyComponent = () => {
@@ -11,6 +12,7 @@ export const BodyComponent = () => {
 
 
     const { dataList, FilterList, SetFilterList } = useBodydata();
+    const onlineStatus=useOnlineStatus();
 
 
     const SearchEventButton = () => {
@@ -29,6 +31,13 @@ export const BodyComponent = () => {
         });
         SetFilterList(filterRestarents);
     }
+
+    if(onlineStatus === false){
+        return (
+            <h2>Please look at your internet coneection</h2>
+        )
+      }
+    
     return dataList.length === 0 ? (
         <ShimmerUi />
     ) : (
