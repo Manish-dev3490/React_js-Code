@@ -1,2 +1,0 @@
-// this file is for configuration url of the apis and other links 
- export const menu_data="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";
