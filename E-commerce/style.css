@@ -151,7 +151,14 @@ i {
   position: relative;
   bottom: 49px;
 }
-footer {
-  height: 40px;
-  width: 100%;
+
+
+.footer-bottom{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 50px;
+    font-size: 19px;
+
 }

@@ -4,12 +4,10 @@
         <>
         
             
-    <footer className="big-footer">
      
       <div className="footer-bottom">
         <p>&copy; 2024 Your Explore Mart. All rights reserved.</p>
       </div>
-    </footer>
        
         </>
     )
