@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client"
 import { HeaderComponent } from "./src/components/HeaderComponent";
 import { HeroSection } from "./src/components/HeroSection";
 import { FooterLayout } from "./src/components/Footer";
+import AboutPage from "./src/components/About.jsx";
+import ContactPage from "./src/components/Contact.jsx";
+import HelpPage from "./src/components/Help.jsx";
+import AllProductsPage from "./src/components/AllProducts.jsx";
 import { createBrowserRouter ,RouterProvider} from "react-router-dom";
-import { AllProductsPage } from "./src/components/AllProducts";
-import { ContactPage } from "./src/components/Contact";
-import { HelpPage } from "./src/components/Help";
-import { AboutPage } from "./src/components/About";
 
 
 
