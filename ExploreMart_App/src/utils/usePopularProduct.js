@@ -19,7 +19,7 @@ const usePopularProduct=()=>{
     }
 
     useEffect(()=>{
-        FetchData();
+        FetchData()
     },[])
 
     return {PopularData,setPopulardata,FetchData};
