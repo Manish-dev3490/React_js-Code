@@ -1,9 +1,11 @@
+import 'remixicon/fonts/remixicon.css'
+
 // this is a header file 
 const HeaderComponent=()=>{
     return (
         <>
         <div className="header">
-            <h2>Explore <span>Mart</span></h2>
+            <h2>Explore<span className='mart'>Mart</span></h2>
             <div className="navigation-bar">
                 <ul>
                     <li>Home</li>
@@ -17,13 +19,13 @@ const HeaderComponent=()=>{
 
             <div className="search-container">
                 <input type="text"></input>
-                <button>Search</button>
+                <button className='srch-btn'>Search</button>
             </div>
 
         <div className="user-profile-info">
-            <div className="user"><i class="ri-user-fill"></i></div>
+            <div className="user"><i className="ri-user-fill"></i></div>
             <button className="login-btn">Login</button>
-            <div className="cart-section"><i class="ri-shopping-cart-2-line"></i></div>
+            <div className="cart-section"><i className="ri-shopping-cart-2-line"></i></div>
         </div>
 
         </div>
