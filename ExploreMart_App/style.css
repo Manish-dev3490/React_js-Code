@@ -62,8 +62,8 @@ i {
   padding-block: 8px;
 }
 .search-container input:focus {
-  color: black;
-  background-color: rgb(214, 232, 232);
+  color:white;
+  background-color: black;
 }
 .login-btn {
   padding-block: 8px;

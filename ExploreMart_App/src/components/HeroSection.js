@@ -1,11 +1,14 @@
 import { Hero_image } from "../utils/constant"
 import 'remixicon/fonts/remixicon.css'
+import usePopularProduct from "../utils/usePopularProduct"
 
 
 // In this file i will make a hero section of the application
 
 const HeroSection=()=>{
-    
+    const {PopularData,setPopulardata}=usePopularProduct();
+    console.log(PopularData);
+
     return (
         <>
         <div className="hero-section">
