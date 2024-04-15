@@ -1,0 +1,26 @@
+{
+  "name": "exploremart_app",
+  "version": "1.0.0",
+  "description": "Explore mart application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manish-dev3490/React_js-Code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manish-dev3490/React_js-Code/issues"
+  },
+  "homepage": "https://github.com/Manish-dev3490/React_js-Code#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
