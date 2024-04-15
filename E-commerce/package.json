@@ -1,18 +1,17 @@
 {
   "name": "e-commerce",
   "version": "1.0.0",
-  "description": "A small e-commerce app",
+  "description": "small ecommerce app",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html",
-    "build": "parcel  build index.html"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Manish-dev3490/React_js-Code.git"
   },
-  "author": "Manish Kumar",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Manish-dev3490/React_js-Code/issues"

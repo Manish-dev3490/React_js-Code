@@ -7,7 +7,7 @@ const usePopulateData=()=>{
      // Fetching the data over network
      const fetchDataFromApi = async () => {
          try {
-             const response = await fetch("https://dummyjson.com/products?limit=5");
+             const response = await fetch("https://dummyjson.com/products?limit=15");
              const json = await response.json();
              setPopularData(json.products);
          } catch (error) {
