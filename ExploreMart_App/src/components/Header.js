@@ -5,7 +5,7 @@ const HeaderComponent=()=>{
     return (
         <>
         <div className="header">
-            <h2>Explore<span className='mart'>Mart</span></h2>
+            <h2>Explore <span className='mart'>Mart</span></h2>
             <div className="navigation-bar">
                 <ul>
                     <li>Home</li>

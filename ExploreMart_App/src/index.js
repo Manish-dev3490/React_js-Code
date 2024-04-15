@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 import HeaderComponent from "./components/Header";
-
+import HeroSection from "./components/HeroSection";
 
 
 // making our main component of the whole application
@@ -10,6 +10,7 @@ const ApplicationWholeData=()=>{
     return (
         <>
     <HeaderComponent/>
+    <HeroSection/>
         </>
     )
 }
