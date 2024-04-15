@@ -25,7 +25,7 @@ const HeroSection=()=>{
             <h2>Popular <span>Products</span></h2>
 
             <div className="product-list">
-
+           
             </div>
         </div>
         </>
