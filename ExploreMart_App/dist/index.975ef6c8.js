@@ -2958,11 +2958,18 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
+// making our main component of the whole application
+const ApplicationWholeData = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {}, void 0, false);
+};
+_c = ApplicationWholeData;
 // getting root from our index.html
 const root = (0, _clientDefault.default).createRoot(document.querySelector(".root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
     children: "Hello To the react"
 }, void 0, false));
+var _c;
+$RefreshReg$(_c, "ApplicationWholeData");
 
   $parcel$ReactRefreshHelpers$20e5.postlude(module);
 } finally {
