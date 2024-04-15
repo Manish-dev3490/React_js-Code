@@ -4,7 +4,7 @@ import usePopulateData from "../utils/usePopulateData";
 
 export const HeroSection = () => {
 
-    const {popularData,setPopularData}=usePopulateData;
+    const {popularData,setPopularData}=usePopulateData();
    
     return (
         <>
@@ -24,9 +24,12 @@ export const HeroSection = () => {
 
             <h2>Popular Products</h2>
             <div className="products-list">
-                {popularData.map((card)=>{
-                    return <ProductCard  cardData={card}/>
-                })}
+                {
+                    popularData.map((check)=>{
+                        return <ProductCard key={check.id} cardData={check}></ProductCard>
+                         
+                    })
+                }
             </div>
 
           </div>

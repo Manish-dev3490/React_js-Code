@@ -4,12 +4,13 @@
  export const ProductCard = (props) => {
 
   const {cardData}=props;
-  const {category,description,image,price,title,rating}=cardData;
+  const {category,description,images,price,title,rating}=cardData;
 
     return (
         <div className="product-card">
-            <img src={image} />
+            <img src={images[0]} />
             <p>{category} </p>
+            <p>{title}</p>
                 <p>Price Rs {Math.floor(price)} </p>
                 <button className="Add-to-cart-btn">Add to cart</button>
         </div>
