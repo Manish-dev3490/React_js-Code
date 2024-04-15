@@ -130,8 +130,8 @@ i {
 }
 .product-card:hover {
   cursor: pointer;
+  transform: scale(0.9);
 
-  border: 1px solid black;
 }
 .product-card button {
   font-size: 18px;
