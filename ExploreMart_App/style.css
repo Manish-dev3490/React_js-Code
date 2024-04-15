@@ -4,3 +4,25 @@
     margin: 0;
     box-sizing: border-box;
 }
+body,html{
+    background-color: azure;
+}
+.header{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-around;
+}
+.navigation-bar ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navigation-bar ul li{
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 18px;
+    
+}

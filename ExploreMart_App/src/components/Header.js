@@ -21,9 +21,9 @@ const HeaderComponent=()=>{
             </div>
 
         <div className="user-profile-info">
-            <div className="user"></div>
-            <div className="login-section"></div>
-            <div className="cart-section"></div>
+            <div className="user"><i class="ri-user-fill"></i></div>
+            <button className="login-btn">Login</button>
+            <div className="cart-section"><i class="ri-shopping-cart-2-line"></i></div>
         </div>
 
         </div>
