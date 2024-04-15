@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Header Styling */
 .header{
     height: 70px;
     width: 100%;
@@ -73,3 +74,5 @@ i{
 
     cursor: pointer;
 }
+
+/* hero-section Styling */
