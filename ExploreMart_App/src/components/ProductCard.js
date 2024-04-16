@@ -7,9 +7,11 @@ const ProductCard=(props)=>{
         <>
         <div className="product-card">
         <img src={images[0]}/>
-        <p className="brand-title">{brand}<span>{category}</span></p>
-        <h2>{price}</h2>
-        <h3>{rating}</h3>
+        <p className="brand-title">{brand}  {title}</p>
+        <p className="tag">{price}</p>
+        <p className="tag">Stock  {stock}</p>
+        <span className="tag">Category <span>{category.toUpperCase()}</span></span>
+        <button className="cart-button">Add to Cart</button>
         </div>
         </>
     )
