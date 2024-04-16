@@ -4,22 +4,54 @@ import ReactDOM from "react-dom/client"
 import HeaderComponent from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer"
-// import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import AllProduct from "./components/AllProducts";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 
 // making our main component of the whole application
-const ApplicationWholeData=()=>{
+const ApplicationWholeData = () => {
     return (
         <>
-    <HeaderComponent/>
-    <HeroSection/>
-    <Footer/>
+            <HeaderComponent />
+            <Outlet></Outlet>
+           
         </>
     )
 }
 
 
+// Creating a application router for making routes in our application
+const ApplicationRouter = createBrowserRouter([
+    {
+        path: "/",
+        element: <ApplicationWholeData />,
+        children:[
+            {
+                path:"/",
+                element:[<HeroSection></HeroSection> , <Footer></Footer>]
+            },
+            {
+                path:"/About",
+                element:<About></About>
+            },
+            {
+                path:"/Contact",
+                element:<Contact></Contact>
+            },
+            {
+                path:"/AllProduct",
+                element:<AllProduct></AllProduct>
+            },
+        ],
+        errorElement:<Error></Error>
+    }
+    
+    
+])
+
 
 // getting root from our index.html
-const root=ReactDOM.createRoot(document.querySelector(".root"));
-root.render(<ApplicationWholeData/>)
+const root = ReactDOM.createRoot(document.querySelector(".root"));
+root.render(<RouterProvider router={ApplicationRouter}></RouterProvider>)
