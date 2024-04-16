@@ -1,4 +1,5 @@
 import 'remixicon/fonts/remixicon.css'
+import { Link } from 'react-router-dom';
 
 // this is a header file 
 const HeaderComponent=()=>{
@@ -8,10 +9,10 @@ const HeaderComponent=()=>{
             <h2>Explore <span className='mart'>Mart</span></h2>
             <div className="navigation-bar">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>All Products</li>
-                    <li>Contact</li>
+                   <Link to={"/"}> <li>Home</li></Link>
+                    <Link to={"/About"}><li>About</li></Link>
+                    <Link to={"/AllProduct"}><li>All Products</li></Link>
+                    <Link to={"/Contact"}><li>Contact</li></Link>
 
                 </ul>
             </div>
