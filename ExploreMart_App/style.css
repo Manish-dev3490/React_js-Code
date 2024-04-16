@@ -132,7 +132,7 @@ i {
 }
 .product-card{
   height: auto;
-  width: 280px;
+  width: 250px;
   padding-inline: 8px;
   padding-block: 8px;
   display: flex;
@@ -180,4 +180,12 @@ i {
     margin-top: 32px;
     height: 60px;
     font-size: 19px;
+}
+.all-product-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-block-start: 100px;
 }

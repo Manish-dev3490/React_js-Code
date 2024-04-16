@@ -11,6 +11,7 @@ const usePopularProduct=()=>{
         try{
             const response=await fetch(Limit_product_api);
             const json=await response.json();
+            console.log(json);
             setPopulardata(json.products);
 
         }

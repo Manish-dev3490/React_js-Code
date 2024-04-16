@@ -8,6 +8,7 @@ import ProductCard from "./ProductCard"
 
 const HeroSection=()=>{
     const {PopularData,setPopulardata}=usePopularProduct();
+    console.log(PopularData);
 
     return (
         <>
