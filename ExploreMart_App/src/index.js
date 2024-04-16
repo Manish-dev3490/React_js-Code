@@ -3,6 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom/client"
 import HeaderComponent from "./components/Header";
 import HeroSection from "./components/HeroSection";
+import Footer from "./components/Footer"
+
 // import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 
@@ -12,6 +14,7 @@ const ApplicationWholeData=()=>{
         <>
     <HeaderComponent/>
     <HeroSection/>
+    <Footer/>
         </>
     )
 }
