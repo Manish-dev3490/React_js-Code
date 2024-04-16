@@ -3,7 +3,8 @@
 const AllProduct=()=>{
     return (
         <>
-        <p>This is my AllProduct Page</p>
+        <p></p>
+        
         </>
     )
 }
