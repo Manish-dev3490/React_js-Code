@@ -11,7 +11,6 @@ const HeaderComponent=()=>{
                     <li>Home</li>
                     <li>About</li>
                     <li>All Products</li>
-                    <li>Help</li>
                     <li>Contact</li>
 
                 </ul>
