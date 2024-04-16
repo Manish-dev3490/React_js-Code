@@ -61,9 +61,18 @@ body,html{
     background-color: azure;
     font-size: 18px;
     border-radius: 6px;
+    padding-inline: 20px;
+    padding-block: 10px;
+    list-style: none;
 
 }
 .list:hover{
     background-color: black;
     color: white;
+}
+.todo-add-box ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
 }

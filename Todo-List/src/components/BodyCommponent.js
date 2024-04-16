@@ -3,30 +3,42 @@ import { useEffect, useState } from "react";
 
 const BodyComponent=()=>{
 
-    const [TodoValue,setTodoValue]=useState("");
-    const [InputText,setInputText]=useState("");
+    const [Todo,setTodo]=useState([]);
+    const [NewTodo,setNewTodo]=useState([]);
 
     return (
         <>
         <div className="Body">
         <div className="todo-box">
             <input type="text" onChange={(e)=>{
-                setInputText(e.target.value);
+                setNewTodo(e.target.value);
             }}></input>
             <button className="add-todo-btn" onClick={()=>{
                 
-                if(InputText===""){
+                if(NewTodo===""){
                     window.alert("Please enter your query to add in todo");
                 }
 
-                else if (InputText){
-                    setTodoValue(InputText);
-                }
+                return (
+                    <>{setTodo([...Todo,NewTodo])}</>
+                )
+                
             }}>Add Todo</button>
         </div>
 
         <div className="todo-add-box">
-            <p className="list">{TodoValue}</p>
+            <ul>
+            {
+                Todo.map((todo,index)=>{
+                    console.log(todo);
+                    return (
+                        
+                            <li key={index} className="list">{todo}</li>
+                        
+                    )
+                })
+            }
+            </ul>
         </div>
         
         </div>
