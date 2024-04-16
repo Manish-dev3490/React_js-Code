@@ -1,13 +1,13 @@
 import { Hero_image } from "../utils/constant"
 import 'remixicon/fonts/remixicon.css'
 import usePopularProduct from "../utils/usePopularProduct"
+import ProductCard from "./ProductCard"
 
 
 // In this file i will make a hero section of the application
 
 const HeroSection=()=>{
     const {PopularData,setPopulardata}=usePopularProduct();
-    console.log(PopularData);
 
     return (
         <>
@@ -25,7 +25,9 @@ const HeroSection=()=>{
             <h2>Popular <span>Products</span></h2>
 
             <div className="product-list">
-           
+            {PopularData.map((check)=>{
+                return <ProductCard key={check.id} cardData={check}/>
+            })}
             </div>
         </div>
         </>
