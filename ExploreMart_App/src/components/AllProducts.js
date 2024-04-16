@@ -2,10 +2,10 @@
 
 const AllProduct=()=>{
     return (
-        <>
-        <p></p>
+       <div className="all-product-list">
         
-        </>
+
+       </div>
     )
 }
 
