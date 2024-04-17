@@ -7,7 +7,7 @@ import ProductCard from "./ProductCard"
 // In this file i will make a hero section of the application
 
 const HeroSection=()=>{
-    const {PopularData,setPopulardata}=usePopularProduct();
+    const {PopularData}=usePopularProduct();
 
     return (
         <>
