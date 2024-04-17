@@ -7,7 +7,9 @@ import Footer from "./components/Footer"
 import Contact from "./components/Contact";
 import About from "./components/About";
 import AllProduct from "./components/AllProducts";
+import ProductDetail from "./components/ProductDetail";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
 
 
 // making our main component of the whole application
@@ -44,6 +46,10 @@ const ApplicationRouter = createBrowserRouter([
                 path:"/AllProduct",
                 element:<AllProduct></AllProduct>
             },
+            {
+                path:"/ProductDetail",
+                element:<ProductDetail></ProductDetail>
+            }
         ],
         errorElement:<Error></Error>
     }
