@@ -1,11 +1,14 @@
 import useAllProduct from "../utils/useAllProduct"
 import ProductCard from "./ProductCard"
 import { Link } from "react-router-dom";
+import FetchCategoryList from "./FetchCategories";
 
 // this is a AllProduct page for our application
 const AllProduct = () => {
 
     const { PopularData } = useAllProduct();
+    const {Fetchcategory}=FetchCategoryList();
+    console.log(Fetchcategory);
 
     return (
         <>

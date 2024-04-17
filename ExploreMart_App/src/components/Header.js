@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 // this is a header file 
 const HeaderComponent = () => {
 
-    const pathName=window.location.pathname;
-    console.log(pathName);
+    
     const changeBar=(e)=>{
         
             let activeLink=document.querySelector(".active");
