@@ -8,8 +8,7 @@ const HeaderComponent = () => {
         
             let activeLink=document.querySelector(".active");
             activeLink.classList.remove("active");
-            e.target.classList.add("active");
-        
+            e.target.classList.add("active");   
     }
     return (
         <>
