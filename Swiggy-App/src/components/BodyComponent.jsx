@@ -40,7 +40,7 @@ export const BodyComponent = () => {
 
         <div className="Hero-section">
             <div className="top-rated-filter">
-                <div className="search-box">
+                <div className="search-box" >
                     <input
                         type="text"
                         value={InputSearch}
