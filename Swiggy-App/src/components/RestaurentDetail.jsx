@@ -27,7 +27,7 @@ export const RestaurentDetailPage = () => {
                     <span>{ }</span>
                     <h4>Outlet <p>{city}</p></h4>
                     <h4>{ } mins</h4>
-                    <div><i class="ri-riding-line"></i> <span>{ } | $31 Delivery fee will apply</span></div>
+                    <div><i className="ri-riding-line"></i> <span>{ } | $31 Delivery fee will apply</span></div>
                     <div>Total { }</div>
                 </div>
             </div>
