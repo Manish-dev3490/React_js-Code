@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 
 const AllProduct=()=>{
     const {PopularData}=useAllProduct();
-    console.log(PopularData +"inside all products");
     return (
        <div className="all-product-list">
         {
             PopularData.map((check)=>{
-                return <Link to={"/ProductDetail"+check.id} key={check.id}> <ProductCard  cardData={check}/></Link>
+                return <Link to={"/ProductDetail/"+check.id} key={check.id}> <ProductCard  cardData={check}/></Link>
             })
         }
        </div>

@@ -47,7 +47,7 @@ const ApplicationRouter = createBrowserRouter([
                 element:<AllProduct></AllProduct>
             },
             {
-                path:"/ProductDetail",
+                path:"/ProductDetail/:resId",
                 element:<ProductDetail></ProductDetail>
             }
         ],
