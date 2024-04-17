@@ -3,16 +3,24 @@ import { Link } from 'react-router-dom';
 
 // this is a header file 
 const HeaderComponent = () => {
+    
+    const changeBar=(e)=>{
+        
+            let activeLink=document.querySelector(".active");
+            activeLink.classList.remove("active");
+            e.target.classList.add("active");
+        
+    }
     return (
         <>
             <div className="header">
                 <h2>Explore <span className='mart'>Mart</span></h2>
                 <div className="navigation-bar">
                     <ul>
-                        <Link to={"/"}> <li className='active-bar active' >Home</li></Link>
-                        <Link to={"/About"}><li className='active-bar active'>About</li></Link>
-                        <Link to={"/AllProduct"}><li className='active-bar active'>All Products</li></Link>
-                        <Link to={"/Contact"}><li className='active-bar active'>Contact</li></Link>
+                        <Link to={"/"}> <li className='active-bar active' onClick={changeBar}>Home</li></Link>
+                        <Link to={"/About"}><li className='active-bar ' onClick={changeBar}>About</li></Link>
+                        <Link to={"/AllProduct"}><li className='active-bar ' onClick={changeBar}>All Products</li></Link>
+                        <Link to={"/Contact"}><li className='active-bar' onClick={changeBar}>Contact</li></Link>
 
                     </ul>
                 </div>

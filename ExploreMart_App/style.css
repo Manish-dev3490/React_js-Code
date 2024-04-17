@@ -257,3 +257,6 @@ i {
 .product-info .cart-button {
   width: 55vw;
 }
+.active-bar.active{
+  color: red;
+}
