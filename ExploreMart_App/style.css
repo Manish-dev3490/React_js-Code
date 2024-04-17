@@ -148,13 +148,17 @@ i {
 }
 .brand-title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 .tag {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
+  font-size: 18px;
+}
+.tag span{
+  font-weight: 600;
   font-size: 18px;
 }
 .product-card:hover {
@@ -193,9 +197,9 @@ i {
   gap: 50px;
 }
 .product-detail-page img {
-  height: 470px;
-  width: 550px;
-  border-radius: 14px;
+  height: 61vh;
+  width: 36%;
+  border-radius: 10px;
   margin-inline-start: 55px;
 }
 .product-info {
