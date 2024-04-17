@@ -26,7 +26,7 @@
   cursor: pointer;
   font-size: 20px;
 }
-.navigation-bar ul a{
+.navigation-bar ul a {
   text-decoration: none;
   color: black;
 }
@@ -66,7 +66,7 @@ i {
   padding-block: 8px;
 }
 .search-container input:focus {
-  color:white;
+  color: white;
   background-color: black;
 }
 .login-btn {
@@ -85,18 +85,17 @@ i {
   height: 100vh;
 }
 .hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.hero-section h2{
+.hero-section h2 {
   font-size: 34px;
   position: relative;
   bottom: 35px;
-
 }
-.hero-section h2 span{
-    color: red;
+.hero-section h2 span {
+  color: red;
 }
 .info-boxes {
   display: flex;
@@ -106,31 +105,31 @@ i {
   width: 100%;
 }
 .info-boxes button {
-    padding-inline: 34px;
-    padding-block: 17px;
-    background-color: white;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    font-size: 19px;
-    border-radius: 6px;
-    cursor: pointer;
+  padding-inline: 34px;
+  padding-block: 17px;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  font-size: 19px;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.info-boxes button:hover{
-    transform: scale(0.9);
-    background-color: black;
-    color: white;
+.info-boxes button:hover {
+  transform: scale(0.9);
+  background-color: black;
+  color: white;
 }
-.product-list{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
-.product-card{
+.product-card {
   height: auto;
   width: 250px;
   padding-inline: 8px;
@@ -143,49 +142,67 @@ i {
   /* align-items: cener; */
   /* justify-content: center; */
 }
-.product-card img{
+.product-card img {
   height: 180px;
   width: 100%;
 }
-.brand-title{
+.brand-title {
   font-weight: bold;
   font-size: 18px;
 }
 
-.tag{
+.tag {
   display: flex;
   align-items: center;
   gap: 20px;
   font-size: 18px;
 }
-.product-card:hover{
+.product-card:hover {
   cursor: pointer;
   border: 1px solid black;
-
 }
-.cart-button{
+.cart-button {
   padding-block: 5px;
   color: black;
   font-size: 16px;
   cursor: pointer;
 }
-.cart-button:hover{
- background-color: black;
- color: white;
+.cart-button:hover {
+  background-color: black;
+  color: white;
 }
-.footer{
+.footer {
   display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 32px;
-    height: 60px;
-    font-size: 19px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  height: 60px;
+  font-size: 19px;
 }
-.all-product-list{
+.all-product-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 30px;
   padding-block-start: 100px;
+}
+.product-detail-page {
+  padding-block-start: 126px;
+  display: flex;
+  gap: 50px;
+}
+.product-detail-page img {
+  height: 470px;
+  width: 550px;
+  border-radius: 14px;
+  margin-inline-start: 55px;
+}
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.product-info .cart-button {
+  width: 98%;
 }
