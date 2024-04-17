@@ -6,15 +6,17 @@ const ProductDetail = () => {
 
     const { FetchedData } = FetchProductDetail();
     console.log(FetchedData);
-    const { id, price, rating, brand, discountPercentage, stock, title, description, category, images, thumbnail } = FetchedData;
-
+    const { id, price, rating, brand, discountPercentage, stock, title, description, category, thumbnail } = FetchedData;
     return (
         <div className="product-detail-page">
             <img src={thumbnail}></img>
 
+
             <div className="product-info">
                 <p className="brand-title">{brand}  {title}</p>
                 <p className="tag">Price<span>{price}</span> </p>
+                <p className="tag">Id of Product<span>{id}</span> </p>
+
                 <p className="tag">Stock<span> {stock}</span></p>
                 <p className="tag">Rating<span>{rating}</span></p>
                 <p className="tag">Discount<span>{discountPercentage}</span></p>
