@@ -1,11 +1,15 @@
 // In this  file i will make a footer for my application
 
-const Footer=()=>{
+const Footer = () => {
     return (
         <>
-        <div className="footer">
-            <p> Copyright @ reserved to you explore mart application </p>
-        </div>
+            <div className="footer">
+        
+            </div>
+            <div className="small-footer">
+                <p> Copyright @ reserved to you explore mart application </p>
+
+            </div>
         </>
     )
 }

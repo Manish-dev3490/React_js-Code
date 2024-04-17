@@ -27,10 +27,7 @@ const HeaderComponent = () => {
                     </ul>
                 </div>
 
-                <div className="search-container">
-                    <input type="text"></input>
-                    <button className='srch-btn'>Search</button>
-                </div>
+               
 
                 <div className="user-profile-info">
                     <div className="user"><i className="ri-user-fill"></i></div>
