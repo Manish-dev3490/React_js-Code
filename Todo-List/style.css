@@ -20,59 +20,12 @@ body,html{
 .header h2{
     font-size: 30px;
 }
-.Body{
+.use-state-hook{
     display: flex;
     justify-content: center;
     padding-block-start: 20px;
     flex-direction: column;
     gap:15px;
 
-    align-items: center;
-}
-.todo-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-.todo-box input{
-    width: 300px;
-    height: 35px;
-    border-radius: 8px;
-    background-color: azure;
-    color: black;
-    font-size: 20px;
-    padding-inline-start: 15px;
-}
-.todo-box input:hover{
-    background-color: black;
-    color: azure;
-}
-.add-todo-btn{
-    height: 35px;
-    width: 130px;
-    border-radius: 8px;
-    background-color: azure;
-    color: black;
-    font-size: 20px;
-    cursor: pointer;
-}
-.list{
-    background-color: azure;
-    font-size: 18px;
-    border-radius: 6px;
-    padding-inline: 20px;
-    padding-block: 10px;
-    list-style: none;
-
-}
-.list:hover{
-    background-color: black;
-    color: white;
-}
-.todo-add-box ul{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     align-items: center;
 }

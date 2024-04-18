@@ -4,15 +4,34 @@ import HeaderComponent from "./Header";
 
 
 const BodyComponent = () => {
+
+    
+    const [first,setFirst]=useState(0);
+    const [second,setSecond]=useState(0);
+    const [value,setValue]=useState(0);
+
+    
+    function handleOne(event){
+        setFirst(Number(event.target.value));
+    }
+
+    function handletwo(event){
+        setSecond(Number(event.target.value))
+    }
+
+
+    function handleAdd(){
+        setValue(first+second)
+    }
+
     return (
         
-        <>
-        <HeaderComponent/>
-            <input type="text" placeholder="Enter first Number"></input>
-            <input type="text" placeholder="Enter first Number"></input>
-            <button>Add these numbers</button>
-            <h2>Results  is {""}</h2>
-        </>
+        <div className="use-state-hook">
+            <input type="text" id="number1" onChange={handleOne} placeholder="Enter first Number"></input>
+            <input type="text" id="number2" onChange={handletwo} placeholder="Enter first Number"></input>
+            <button className="add-btn" onClick={handleAdd}> Add these numbers</button>
+            <h2 className="result">Results  is {value}</h2>
+        </div>
     )
 }
 export default BodyComponent;
