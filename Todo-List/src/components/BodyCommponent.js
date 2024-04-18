@@ -13,15 +13,21 @@ const BodyComponent = () => {
     
     function handleOne(event){
         setFirst(Number(event.target.value));
+        console.log("first number is "+first);
     }
 
     function handletwo(event){
         setSecond(Number(event.target.value))
+        console.log("second number is "+second);
+
     }
 
 
     function handleAdd(){
-        setValue(first+second)
+        setValue((prev)=>{
+            console.log(prev)
+            return (first+second)
+        } );
     }
 
     return (
