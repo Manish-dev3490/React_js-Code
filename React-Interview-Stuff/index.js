@@ -1,7 +1,8 @@
 // in this project i am learning some important React hooks
-import Body from "./src/components/Body";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Body from "./src/components/Body";
+
 
 const Application=()=>{
     return(
