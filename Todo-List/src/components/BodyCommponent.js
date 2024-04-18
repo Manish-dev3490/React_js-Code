@@ -1,49 +1,18 @@
 import { useEffect, useState } from "react";
+import HeaderComponent from "./Header";
 // In this file i am making body component
 
-const BodyComponent=()=>{
 
-    const [Todo,setTodo]=useState([]);
-    const [NewTodo,setNewTodo]=useState([]);
-
+const BodyComponent = () => {
     return (
-        <>
-        <div className="Body">
-        <div className="todo-box">
-            <input type="text" onChange={(e)=>{
-                setNewTodo(e.target.value);
-            }}></input>
-            <button className="add-todo-btn" onClick={()=>{
-                
-                if(NewTodo===""){
-                    window.alert("Please enter your query to add in todo");
-                }
-
-                return (
-                    <>{setTodo([...Todo,NewTodo])}</>
-                )
-                
-            }}>Add Todo</button>
-        </div>
-
-        <div className="todo-add-box">
-            <ul>
-            {
-                Todo.map((todo,index)=>{
-                    console.log(todo);
-                    return (
-                        
-                            <li key={index} className="list">{todo}</li>
-                        
-                    )
-                })
-            }
-            </ul>
-        </div>
         
-        </div>
+        <>
+        <HeaderComponent/>
+            <input type="text" placeholder="Enter first Number"></input>
+            <input type="text" placeholder="Enter first Number"></input>
+            <button>Add these numbers</button>
+            <h2>Results  is {""}</h2>
         </>
     )
 }
-
 export default BodyComponent;
