@@ -38,8 +38,8 @@ export const BodyComponent = () => {
 
     return  dataList.length === 0 ? <ShimmerUi/>:(
 
-        <div className="Hero-section">
-            <div className="top-rated-filter">
+        <div className="Hero-section flex items-center justify-center flex-col">
+            <div className="top-rated-filter py-6 flex items-center justify-center gap-6">
                 <div className="search-box" >
                     <input
                         type="text"
@@ -47,6 +47,7 @@ export const BodyComponent = () => {
                         onChange={(e) => {
                             SetInputsearch(e.target.value);
                         }}
+                        className=" bg-cyan-200=0p;"
                     />
                     <button className="search-btn" onClick={() => {
                         const FilteredList = dataList.filter((check) => {
@@ -73,14 +74,14 @@ export const BodyComponent = () => {
                 </button>
             </div>
 
-            <div className="Resta-list">
+            <div className="Resta-list flex items-center gap-16 flex-wrap justify-center">
                 {
 
                     FilterList.map((card) => {
                         return (
 
                        
-                           <Link to={"/restaurent/" + card.info.id}> 
+                           <Link className=" w-72 h-80 " to={"/restaurent/" + card.info.id}> 
                            <Restacard  resData={card.info} />
                            </Link>
 

@@ -12,12 +12,12 @@ export const Restacard = (props) => {
     return (
 
         <div className="Resta-card">
-                 <img src={CDN_URL+cloudinaryImageId} />
-                 <div className="card-body">
+                 <img src={CDN_URL+cloudinaryImageId} className=" w-72 h-60"/>
+                 <div className=" w-full">
                      <h2 className="card-heading">{name}</h2>
                      <p>{costForTwo}</p>
                      <p className="info">Rating   {avgRating} <i className="ri-star-fill"></i> <span>Delivery</span>{sla.deliveryTime} mins</p>
-                     <p className="cuisines">{cuisines.join(" , ")}</p>
+                     <p className=" overflow-hidden text-ellipsis whitespace-nowrap">{cuisines.join(" , ")}</p>
 
                  </div>
             </div>

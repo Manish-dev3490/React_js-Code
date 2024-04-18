@@ -12,17 +12,17 @@ export const HeaderComponent = () => {
 
     
     return (
-        <div className="Header">
-            <h2>Food Paradise</h2>
+        <div className="flex justify-between px-10 py-8 bg-cyan-200">
+            <h2 className=" font-semibold text-black  text-3xl">Food Paradise</h2>
             
-            <div className="navigation-bar">
-                <ul>
-                    <li className="on-or-not">Online:{onlineStatus===true?"✅" : "🔴"}  </li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/About">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/help">Help</Link></li>
-                    <button className="log-or-not" onClick={() => {
+            <div className="w-60rem">
+                <ul className="flex justify-between px-12 items-center w-50rem">
+                    <li className="px-4">Online:{onlineStatus===true?"✅" : "🔴"}  </li>
+                    <li className="px-4"><Link to="/">Home</Link></li>
+                    <li className="px-4"><Link to="/About">About</Link></li>
+                    <li className="px-4"><Link to="/contact">Contact</Link></li>
+                    <li className="px-4"><Link to="/help">Help</Link></li>
+                    <button className=" bg-white px-6 py-1 border-r-8" onClick={() => {
                         LoginStatus === "Login" ? SetLoginStatus("Logout") : SetLoginStatus("Login");
                     }}>{LoginStatus}</button>
                 </ul>
