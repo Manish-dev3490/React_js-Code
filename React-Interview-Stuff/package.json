@@ -1,0 +1,26 @@
+{
+  "name": "react-interview-stuff",
+  "version": "1.0.0",
+  "description": "React Hot topics for inteview in depth concepts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manish-dev3490/React_js-Code.git"
+  },
+  "author": "manish kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manish-dev3490/React_js-Code/issues"
+  },
+  "homepage": "https://github.com/Manish-dev3490/React_js-Code#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
