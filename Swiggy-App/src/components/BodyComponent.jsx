@@ -40,16 +40,16 @@ export const BodyComponent = () => {
 
         <div className="Hero-section flex items-center justify-center flex-col">
             <div className="top-rated-filter py-6 flex items-center justify-center gap-6">
-                <div className="search-box" >
+                <div className=" flex items-center gap-5" >
                     <input
                         type="text"
                         value={InputSearch}
                         onChange={(e) => {
                             SetInputsearch(e.target.value);
                         }}
-                        className=" bg-cyan-200=0p;"
+                        className=" bg-cyan-200 text-black px-2 py-2" placeholder="Enter your dish"
                     />
-                    <button className="search-btn" onClick={() => {
+                    <button className="bg-black text-white px-2 py-2" onClick={() => {
                         const FilteredList = dataList.filter((check) => {
                             return check.info.name.toLowerCase().includes(InputSearch.toLowerCase());
                         })
@@ -62,7 +62,7 @@ export const BodyComponent = () => {
 
 
                 <button
-                    className="top-restaurents-card"
+                    className="bg-black text-white py-2 px-4"
                     onClick={() => {
                         const filterRestarents = dataList.filter((check) => {
                             return check.info.avgRating > 4.2;
