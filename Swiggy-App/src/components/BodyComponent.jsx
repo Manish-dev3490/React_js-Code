@@ -47,9 +47,9 @@ export const BodyComponent = () => {
                         onChange={(e) => {
                             SetInputsearch(e.target.value);
                         }}
-                        className=" bg-cyan-200 text-black px-2 py-2" placeholder="Enter your dish"
+                        className=" bg-cyan-200 text-black px-6 py-2 rounded-md" placeholder="Enter your dish"
                     />
-                    <button className="bg-black text-white px-2 py-2" onClick={() => {
+                    <button className="bg-black text-white px-2 py-2 rounded-md" onClick={() => {
                         const FilteredList = dataList.filter((check) => {
                             return check.info.name.toLowerCase().includes(InputSearch.toLowerCase());
                         })
@@ -62,7 +62,7 @@ export const BodyComponent = () => {
 
 
                 <button
-                    className="bg-black text-white py-2 px-4"
+                    className="bg-black text-white py-2 px-4 rounded-md"
                     onClick={() => {
                         const filterRestarents = dataList.filter((check) => {
                             return check.info.avgRating > 4.2;

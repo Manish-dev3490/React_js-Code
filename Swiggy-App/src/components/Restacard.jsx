@@ -11,8 +11,8 @@ export const Restacard = (props) => {
 
     return (
 
-        <div className=" bg-sky-100 rounded-md hover:border-x-4">
-                 <img src={CDN_URL+cloudinaryImageId} className=" w-72 h-60"/>
+        <div className=" bg-sky-100 rounded-lg hover:border-x-4">
+                 <img src={CDN_URL+cloudinaryImageId} className=" w-72 h-60 rounded-md"/>
                  <div className=" w-full">
                      <h2 className="card-heading">{name}</h2>
                      <p>{costForTwo}</p>

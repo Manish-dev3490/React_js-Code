@@ -22,7 +22,7 @@ export const HeaderComponent = () => {
                     <li className="px-4"><Link to="/About">About</Link></li>
                     <li className="px-4"><Link to="/contact">Contact</Link></li>
                     <li className="px-4"><Link to="/help">Help</Link></li>
-                    <button className=" bg-white px-6 py-1 border-r-8" onClick={() => {
+                    <button className=" bg-white px-6 py-1 rounded-md " onClick={() => {
                         LoginStatus === "Login" ? SetLoginStatus("Logout") : SetLoginStatus("Login");
                     }}>{LoginStatus}</button>
                 </ul>
