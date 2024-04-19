@@ -1,4 +1,4 @@
-import { Restacard, withPromotedLabel } from "./Restacard";
+import { Restacard} from "./Restacard";
 import { useEffect, useState } from "react";
 import { ShimmerUi } from "./shimmerUI";
 import { Link } from "react-router-dom";
@@ -9,7 +9,6 @@ export const BodyComponent = () => {
     const [dataList, SetDataList] = useState([]);
     const [InputSearch, SetInputsearch] = useState("");
     const [FilterList, SetFilterList] = useState([]);
-    const withPromotedEnhance = withPromotedLabel(Restacard);
     const Fetchdata = async () => {
         try {
             const data = await fetch(
@@ -20,6 +19,7 @@ export const BodyComponent = () => {
             SetDataList(
                 json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
             );
+            console.log(dataList);
             SetFilterList(
                 json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
             );
@@ -34,6 +34,7 @@ export const BodyComponent = () => {
     }, []);
 
     const onlineStatus = useOnlineStatus();
+
     if (onlineStatus === false) return <h2>Looks like your internet connection is off</h2>
 
     return dataList.length === 0 ? <ShimmerUi /> : (
@@ -86,7 +87,7 @@ export const BodyComponent = () => {
                             //    </Link>
 
                             <Link className="w-72 h-80" to={"/restaurant/" + card.info.id}>
-                                {dataList.avgRating ? <withPromotedEnhance resData={card.info} /> : <Restacard resData={card.info} />}
+                            <Restacard resData={card.info} />
                             </Link>
 
 

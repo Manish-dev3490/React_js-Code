@@ -26,15 +26,3 @@ export const Restacard = (props) => {
 }
 
 
-// making a higher order component for  enhancinng some feauture 
-
- export const withPromotedLabel=(Restacard)=>{
-    return (props)=>{
-        return (
-            <>
-            <label className="bg-black text-white">Less than 30 mins</label>
-            <Restacard {...props}/>
-            </>
-        )
-    }
-}
