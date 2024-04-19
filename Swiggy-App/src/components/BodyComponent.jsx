@@ -36,7 +36,7 @@ export const BodyComponent = () => {
     const onlineStatus = useOnlineStatus();
     if(onlineStatus===false)return <h2>Looks like your internet connection is off</h2>
 
-    return  dataList.length === 0 ? <ShimmerUi/>:(
+    return  dataList.length ===0 ? <ShimmerUi/>:(
 
         <div className="Hero-section flex items-center justify-center flex-col">
             <div className="top-rated-filter py-6 flex items-center justify-center gap-6">
@@ -81,7 +81,7 @@ export const BodyComponent = () => {
                         return (
 
                        
-                           <Link className=" w-72 h-80 " to={"/restaurent/" + card.info.id}> 
+                           <Link  key={card.info.id} className=" w-72 h-80 " to={"/restaurent/" + card.info.id}> 
                            <Restacard  resData={card.info} />
                            </Link>
 

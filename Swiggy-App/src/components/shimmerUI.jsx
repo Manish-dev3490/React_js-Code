@@ -2,20 +2,18 @@
 
  export const ShimmerUi=()=>{
     return ( 
-        <div className="ui-list">
-            <div className="ui-card"></div>
-            <div className="ui-card"></div>
-            <div className="ui-card"></div>
-
-            <div className="ui-card"></div>
-            <div className="ui-card"></div>
-            <div className="ui-card"></div>
-
-            <div className="ui-card"></div>
-            <div className="ui-card"></div>
-            <div className="ui-card"></div>
-
-
+        <div className="flex items-center justify-center flex-wrap gap-10 py-14">
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
+            <div className=" bg-gray-100  w-64 h-64 "></div>
         </div>
     )
 }
+
+export default ShimmerUi

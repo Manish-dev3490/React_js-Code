@@ -8,10 +8,12 @@ export const RestaurentDetailPage = () => {
 
     const { resId } = useParams();
 
-    const RestaMenuData = useRestaMenuData(resId);
-
+    const {RestaMenuData,categoryData} = useRestaMenuData(resId);
+    const categoryList=categoryData.filter((check)=>{
+        return check?.card?.card?.itemCards;
+    })
+    console.log(categoryList);
     const { city, totalRatingsString, costForTwoMessage, avgRating, cloudinaryImageId, name, feeDetails } = RestaMenuData;
-
 
 
     return (
