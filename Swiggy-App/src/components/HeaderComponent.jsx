@@ -12,8 +12,8 @@ export const HeaderComponent = () => {
 
     
     return (
-        <div className="flex justify-between px-10 py-8 bg-cyan-200">
-            <h2 className=" font-semibold text-black  text-3xl">Food Paradise</h2>
+        <div className="flex justify-between px-10 py-8 bg-cyan-100 items-center">
+            <h2 className=" font-bold text-black  text-2xl">Food Paradise</h2>
             
             <div className="w-60rem">
                 <ul className="flex justify-between px-12 items-center w-50rem">
