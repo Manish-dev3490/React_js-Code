@@ -1,4 +1,4 @@
-
+import { CDN_URL } from "../utils/constant";
 
 // i am making resta  card component
 export const Restacard = (props) => {
@@ -6,7 +6,6 @@ export const Restacard = (props) => {
 
     const {resData} = props;
     const {avgRating, cuisines, cloudinaryImageId, name, sla, costForTwo } = resData;
-    const CDN_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 
     return (
