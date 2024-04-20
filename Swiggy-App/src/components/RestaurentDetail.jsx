@@ -36,6 +36,8 @@ export const RestaurentDetailPage = () => {
 
                                 <span>⬇️</span>
                             </div>
+
+                            <h2>Dola jatt da boliyaan paave</h2>
                         </div>
                     )
                 }))
