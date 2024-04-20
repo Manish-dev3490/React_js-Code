@@ -1,38 +1,42 @@
 import { useParams } from "react-router-dom";
 import useRestaMenuData from "../utils/useRestaMenuData";
 
-
 // In this component i will make a detail page of restaurents by  there id and this  concept is known as dynamically routing a diffrent url components will inside my url
 export const RestaurentDetailPage = () => {
+  const { resId } = useParams();
+
+  const { RestaMenuData, categoryData } = useRestaMenuData(resId);
+  const categoryList = categoryData.filter((check) => {
+    return check?.card?.card?.itemCards;
+  });
+  console.log(categoryList);
+  const { cuisines, name } = RestaMenuData;
+  const cuisinesString = Array.isArray(cuisines) ? cuisines.join(" ") : "";
 
 
-    const { resId } = useParams();
 
-    const {RestaMenuData,categoryData} = useRestaMenuData(resId);
-    const categoryList=categoryData.filter((check)=>{
-        return check?.card?.card?.itemCards;
-    })
-    console.log(categoryList);
-    const { city, totalRatingsString, costForTwoMessage, avgRating, cloudinaryImageId, name, feeDetails } = RestaMenuData;
-
-
-    return (
-        <div className="Restaurent-detail-page">
-            <div className="intro-card">
-                <div className="first-section">
-                    <p>Home / {city} / {name}</p>
-                    <h2>{name}</h2>
-                </div>
-
-                <div className="information-menu">
-                    <p className="para-info"><i className="ri-star-fill"></i> <h2>{avgRating} ({totalRatingsString}) . {costForTwoMessage}</h2></p>
-                    <span>{ }</span>
-                    <h4>Outlet <p>{city}</p></h4>
-                    <h4>{ } mins</h4>
-                    <div><i className="ri-riding-line"></i> <span>{ } | $31 Delivery fee will apply</span></div>
-                    <div>Total { }</div>
-                </div>
-            </div>
+  return (
+    <div className="flex flex-col items-center justify-center py-6">
+        
+      <div className>
+        <div className="information-menu flex flex-col items-center gap-2">
+          <h2 className="font-bold  text-2xl">{name}</h2>
+          <p className="font-semibold  text-lg">{cuisinesString}</p>
         </div>
-    )
+      </div>
+
+      {
+        categoryList.map((category=>{
+
+            const {title,itemCards}=category.card.card
+            return(
+            <div>
+                <div><span>{title}</span>({itemCards.length})</div>
+            </div>
+            )
+        }))
+      }
+
+    </div>
+  );
 }
