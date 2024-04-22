@@ -1,13 +1,13 @@
 import { ItemCards } from "./ItemCards";
 
-export const RestaurentCategory = ({ data,expandItems,setexpandItems,index}) => {
+export const RestaurentCategory = ({ data, expandItems, setexpandItems, index }) => {
     console.log(data);
 
     function handleClick() {
-       
+
         setexpandItems()
 
-       
+
     }
 
     return (
@@ -21,7 +21,7 @@ export const RestaurentCategory = ({ data,expandItems,setexpandItems,index}) => 
                 <span>⬇️</span>
             </div>
 
-            {expandItems?<ItemCards data={data.card.card.itemCards}/>:false}
+            {expandItems ? <ItemCards data={data.card.card.itemCards} /> : false}
 
         </div>
     )
