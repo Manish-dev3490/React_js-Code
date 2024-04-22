@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordion</title>
     <style>
-        
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .acc {
+            background-color: beige;
+            width: 80%;
+            display: flex;
+            padding-inline: 15px;
+            justify-content: space-between;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
-    
+
     <div class="root">Not rendered</div>
     <script src="index.js" type="module"></script>
 </body>
+
 </html>
