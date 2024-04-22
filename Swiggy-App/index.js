@@ -1,4 +1,4 @@
-import React, {lazy,Suspense, useEffect, useState} from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { HeaderComponent } from "./src/components/HeaderComponent";
 import { BodyComponent } from "./src/components/BodyComponent";
@@ -14,28 +14,28 @@ import { useContext } from "react";
 
 // I am making a whole Application component in which my header hero section and footer will come
 const ApplicationMainDiv = () => {
-    const [name,setName]=useState("Default")
-    useEffect(()=>{
-        const data={
-            name:"manish kumar"
+    const [name, setName] = useState("Default")
+    useEffect(() => {
+        const data = {
+            name: "manish kumar"
         }
         setName(data.name)
 
-    },[])
+    }, [])
     return (
 
         <>
-        <UserLoggedData.Provider value={{loggedinUser:name,setName}}>
-        <UserLoggedData.Provider value={{loggedinUser:"manish dev"}}>
-            <HeaderComponent />
-            </UserLoggedData.Provider>
+            <UserLoggedData.Provider value={{ loggedinUser: name, setName }}>
 
-            <Outlet></Outlet>
+                <HeaderComponent />
+
+
+                <Outlet></Outlet>
             </UserLoggedData.Provider>
         </>
     )
 }
-const Aboutpage=lazy(()=>import("./src/components/About"));
+const Aboutpage = lazy(() => import("./src/components/About"));
 
 const approuter = createBrowserRouter([
     {
@@ -50,7 +50,7 @@ const approuter = createBrowserRouter([
                 path: "/about",
                 element: (
                     <Suspense fallback={<h2>Your about is loading</h2>}>
-                    <Aboutpage></Aboutpage>
+                        <Aboutpage></Aboutpage>
                     </Suspense>
                 )
             }
@@ -64,8 +64,8 @@ const approuter = createBrowserRouter([
                 element: <ContactPage></ContactPage>
             },
             {
-                path:"/restaurent/:resId",
-                element:<RestaurentDetailPage />
+                path: "/restaurent/:resId",
+                element: <RestaurentDetailPage />
             }
         ],
         errorElement: <Error />
