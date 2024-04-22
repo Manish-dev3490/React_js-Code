@@ -1,4 +1,4 @@
-import React, {lazy,Suspense} from "react";
+import React, {lazy,Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import { HeaderComponent } from "./src/components/HeaderComponent";
 import { BodyComponent } from "./src/components/BodyComponent";
@@ -8,14 +8,30 @@ import { HelpPage } from "./src/components/Help";
 import { Error } from "./src/components/Error";
 import { ContactPage } from "./src/components/Contact";
 import { RestaurentDetailPage } from "./src/components/RestaurentDetail";
+import UserLoggedData from "./src/utils/UserContext";
+import { useContext } from "react";
 
 
 // I am making a whole Application component in which my header hero section and footer will come
 const ApplicationMainDiv = () => {
+    const [name,setName]=useState("Default")
+    useEffect(()=>{
+        const data={
+            name:"manish kumar"
+        }
+        setName(data.name)
+
+    },[])
     return (
+
         <>
+        <UserLoggedData.Provider value={{loggedinUser:name,setName}}>
+        <UserLoggedData.Provider value={{loggedinUser:"manish dev"}}>
             <HeaderComponent />
+            </UserLoggedData.Provider>
+
             <Outlet></Outlet>
+            </UserLoggedData.Provider>
         </>
     )
 }

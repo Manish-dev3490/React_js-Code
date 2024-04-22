@@ -58,6 +58,8 @@ export const BodyComponent = () => {
                     }}>
                         Search
                     </button>
+
+
                 </div>
 
 
@@ -72,6 +74,15 @@ export const BodyComponent = () => {
                 >
                     Top Rated Restaurents
                 </button>
+
+                <input
+                        type="text"
+                        value={InputSearch}
+                        onChange={(e) => {
+                            SetInputsearch(e.target.value);
+                        }}
+                        className=" bg-cyan-200 text-black px-6 py-2 rounded-md" placeholder="Enter your name"
+                    />
             </div>
 
             <div className="Resta-list flex items-center gap-16 flex-wrap justify-center">

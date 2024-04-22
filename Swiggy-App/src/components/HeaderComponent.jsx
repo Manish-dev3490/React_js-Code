@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import {Link} from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserLoggedData from "../utils/UserContext";
 
 // I am creating Header  Component for my website  component is anything you can see in application is a component functional based component is just normal javascript function which rreturn the peice of jsx code
 export const HeaderComponent = () => {
@@ -9,6 +10,7 @@ export const HeaderComponent = () => {
     const importantHook = useState("Login");
     const [LoginStatus, SetLoginStatus] = importantHook;
     const  onlineStatus=useOnlineStatus();
+    const {loggedinUser}=useContext(UserLoggedData);
 
     
     return (
@@ -25,6 +27,9 @@ export const HeaderComponent = () => {
                     <button className=" bg-white px-6 py-1 rounded-md " onClick={() => {
                         LoginStatus === "Login" ? SetLoginStatus("Logout") : SetLoginStatus("Login");
                     }}>{LoginStatus}</button>
+                    <li className="px-4">{loggedinUser}</li>
+
+
                 </ul>
             </div>
         </div>
