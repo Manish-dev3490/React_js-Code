@@ -29,7 +29,7 @@ export const RestaurentDetailPage = () => {
             
             {categoryList.map((category, index) => {
                 return (
-                   <RestaurentCategory key={index} data={category}  expandItems={ExpandItems===index?true:false} setexpandItems={()=>setExpandItems(index)} />
+                   <RestaurentCategory key={index} data={category}   expandItems={ExpandItems===index?true:false} setexpandItems={()=>setExpandItems(index)} />
                 )
             })}
         </div>

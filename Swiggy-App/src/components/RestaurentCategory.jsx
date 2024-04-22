@@ -1,10 +1,12 @@
 import { ItemCards } from "./ItemCards";
 
-export const RestaurentCategory = ({ data,expandItems,setexpandItems }) => {
+export const RestaurentCategory = ({ data,expandItems,setexpandItems}) => {
     console.log(data);
 
     function handleClick() {
         setexpandItems()
+
+       
     }
 
     return (
