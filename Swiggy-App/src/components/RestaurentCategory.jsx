@@ -1,12 +1,10 @@
 import { ItemCards } from "./ItemCards";
-import { useState } from "react";
 
-export const RestaurentCategory = ({ data }) => {
-    const [ShowItems, setShowItems] = useState(false)
+export const RestaurentCategory = ({ data,expandItems,setexpandItems }) => {
     console.log(data);
 
     function handleClick() {
-        return setShowItems(!ShowItems)
+        setexpandItems()
     }
 
     return (
@@ -20,7 +18,7 @@ export const RestaurentCategory = ({ data }) => {
                 <span>⬇️</span>
             </div>
 
-            {ShowItems && <ItemCards data={data.card.card.itemCards} />}
+            {expandItems?<ItemCards data={data.card.card.itemCards}/>:false}
 
         </div>
     )
