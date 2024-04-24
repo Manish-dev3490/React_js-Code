@@ -4,7 +4,7 @@ import { HeaderComponent } from "./src/components/HeaderComponent";
 import { BodyComponent } from "./src/components/BodyComponent";
 import "remixicon/fonts/remixicon.css";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { HelpPage } from "./src/components/Help";
+import { CartPage } from "./src/components/Cart";
 import { Error } from "./src/components/Error";
 import { ContactPage } from "./src/components/Contact";
 import { RestaurentDetailPage } from "./src/components/RestaurentDetail";

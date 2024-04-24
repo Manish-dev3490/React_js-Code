@@ -1,6 +1,6 @@
 // I am making the Help page for  changing the page 
 
-export const HelpPage=()=>{
+export const cartpage=()=>{
     return (
         <>
         <h2>This is the Help Page</h2>
