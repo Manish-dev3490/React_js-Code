@@ -8,8 +8,9 @@ import { Error } from "./src/components/Error";
 import { ContactPage } from "./src/components/Contact";
 import { RestaurentDetailPage } from "./src/components/RestaurentDetail";
 import UserLoggedData from "./src/utils/UserContext";
-import {cartpage} from "./src/components/Cart"
-
+import {cartpage} from "./src/components/Cart";
+import { Provider } from "react-redux";
+import AppStore from "./src/utils/AppStore";
 // I am making a whole Application component in which my header hero section and footer will come
 const ApplicationMainDiv = () => {
   const [name, setName] = useState("Default");
@@ -20,6 +21,7 @@ const ApplicationMainDiv = () => {
     setName(data.name);
   }, []);
   return (
+    <Provider store={AppStore}>
     <>
       <UserLoggedData.Provider value={{ loggedinUser: name, setName }}>
         <HeaderComponent />
@@ -27,6 +29,7 @@ const ApplicationMainDiv = () => {
         <Outlet></Outlet>
       </UserLoggedData.Provider>
     </>
+    </Provider>
   );
 };
 const Aboutpage = lazy(() => import("./src/components/About"));
@@ -50,7 +53,7 @@ const approuter = createBrowserRouter([
       },
       {
         path: "/Cart",
-        element: <cartPage></cartPage>,
+        element: <cartpage></cartpage>,
       },
       {
         path: "/contact",
