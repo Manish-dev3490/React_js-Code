@@ -8,9 +8,9 @@ import { Error } from "./src/components/Error";
 import { ContactPage } from "./src/components/Contact";
 import { RestaurentDetailPage } from "./src/components/RestaurentDetail";
 import UserLoggedData from "./src/utils/UserContext";
-import {cartpage} from "./src/components/Cart";
 import { Provider } from "react-redux";
 import AppStore from "./src/utils/AppStore";
+import { CartPage } from "./src/components/Cart";
 // I am making a whole Application component in which my header hero section and footer will come
 const ApplicationMainDiv = () => {
   const [name, setName] = useState("Default");
@@ -53,7 +53,7 @@ const approuter = createBrowserRouter([
       },
       {
         path: "/Cart",
-        element: <cartpage></cartpage>,
+        element: <CartPage></CartPage>
       },
       {
         path: "/contact",
