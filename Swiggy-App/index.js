@@ -22,13 +22,13 @@ const ApplicationMainDiv = () => {
   }, []);
   return (
     <Provider store={AppStore}>
-    <>
-      <UserLoggedData.Provider value={{ loggedinUser: name, setName }}>
-        <HeaderComponent />
+      <>
+        <UserLoggedData.Provider value={{ loggedinUser: name, setName }}>
+          <HeaderComponent />
 
-        <Outlet></Outlet>
-      </UserLoggedData.Provider>
-    </>
+          <Outlet></Outlet>
+        </UserLoggedData.Provider>
+      </>
     </Provider>
   );
 };

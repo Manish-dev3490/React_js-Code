@@ -3,7 +3,7 @@
 export const CartPage=()=>{
     return (
         <>
-        <h2>This is the Help Page</h2>
+        <h2>This is the cart Page</h2>
         <h3>This is namastey Javascript series</h3>
         </>
     )
