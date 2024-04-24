@@ -2,6 +2,7 @@ import { useState ,useContext} from "react";
 import {Link} from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserLoggedData from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 // I am creating Header  Component for my website  component is anything you can see in application is a component functional based component is just normal javascript function which rreturn the peice of jsx code
 export const HeaderComponent = () => {
@@ -11,6 +12,8 @@ export const HeaderComponent = () => {
     const [LoginStatus, SetLoginStatus] = importantHook;
     const  onlineStatus=useOnlineStatus();
     const {loggedinUser}=useContext(UserLoggedData);
+    const CartItems=useSelector((store)=>store.cart.item)
+    console.log(CartItems);
 
     
     return (
