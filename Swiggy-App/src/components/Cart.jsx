@@ -1,10 +1,15 @@
+import { useSelector } from "react-redux"
+import { ItemCards } from "./ItemCards";
 // I am making the Help page for  changing the page 
 
 export const CartPage=()=>{
+    const CartItems=useSelector((store)=>store.cart.item)
+    console.log(CartItems);
     return (
         <>
-        <h2>This is the cart Page</h2>
-        <h3>This is namastey Javascript series</h3>
+        <div className="w-6/12 m-auto">
+            <ItemCards data={CartItems}></ItemCards>
+        </div>
         </>
     )
 }
