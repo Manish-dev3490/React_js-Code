@@ -13,7 +13,6 @@ const CartSlice = createSlice({
         },
         deleteCart: (state) => {
             state.item.length = 0;
-            return { item: [] }
         },
 
     }
