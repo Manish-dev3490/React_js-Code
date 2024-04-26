@@ -8,6 +8,7 @@ export const Restacard = (props) => {
 
     // const {loggedinUser}=useContext(UserLoggedData)
     const {resData} = props;
+    console.log(resData);
     const {avgRating, cuisines, cloudinaryImageId, name, sla, costForTwo } = resData;
     const {loggedinUser}=useContext(UserLoggedData)
 
