@@ -2,10 +2,16 @@ import { useSelector } from "react-redux"
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import {useNavigate} from "react-router-dom"
+import {  onAuthStateChanged } from "firebase/auth";
+import {addUser, removeUser} from "../utils/userSlice"
+import {useDispatch} from "react-redux"
+import { useEffect} from "react"
+
 
 export const Header=()=>{
     const user=useSelector((store)=>store.user);
     const navigate=useNavigate();
+    const dispatch=useDispatch();
 
     const handleSignedOut=()=>{
         signOut(auth).then(() => {
@@ -18,6 +24,22 @@ export const Header=()=>{
     }
    
 
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+              const {email, displayName, uid,photoURL} = user;
+              dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
+              navigate("/browse")
+              
+            } else {
+             dispatch(removeUser)
+             removeUser({})
+             navigate("/")
+            }
+          });
+
+    },[])
+    
     return (
         <div className="px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"> 
         <div className="">

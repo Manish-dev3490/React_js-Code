@@ -55,7 +55,6 @@ export const Login = () => {
             .then(() => {
               const {email, displayName, uid,photoURL} = auth.currentUser;
               dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
-              navigate("/browse");
             })
             .catch((error) => {
               seterrorMessage(error);
@@ -69,8 +68,6 @@ export const Login = () => {
     } else {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          navigate("/browse");
-          // ...
         })
         .catch((error) => {
           seterrorMessage("did not found this user in our backend");
