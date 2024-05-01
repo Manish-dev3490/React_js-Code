@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { CheckValidation } from "../utils/validate";
 import { Header } from "./Header";
 import { updateProfile } from "firebase/auth";
-import {user_avatar} from "../utils/constant"
+import {heroImage, user_avatar} from "../utils/constant"
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -79,7 +79,7 @@ export const Login = () => {
       <div>
         <img
           className="w-full bg-gradient-to-b from-black absolute"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/c7f07b68-7989-4ff7-a31e-11c17dcc2fea/fcf685b8-3f9f-42d8-9af3-4bb86fa5a3b8/IN-en-20240422-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+          src={heroImage}
           alt="background"
         />
       </div>

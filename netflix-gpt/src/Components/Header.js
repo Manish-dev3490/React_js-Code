@@ -6,7 +6,7 @@ import {  onAuthStateChanged } from "firebase/auth";
 import {addUser, removeUser} from "../utils/userSlice"
 import {useDispatch} from "react-redux"
 import { useEffect} from "react"
-
+import { netflixlogo } from "../utils/constant";
 
 export const Header=()=>{
     const user=useSelector((store)=>store.user);
@@ -21,7 +21,6 @@ export const Header=()=>{
           });
     }
    
-
     useEffect(()=>{
       const unsubscribe=  onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -43,7 +42,7 @@ export const Header=()=>{
     return (
         <div className="px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"> 
         <div className="">
-            <img className=" w-48 " src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo"></img>
+            <img className=" w-48 " src={netflixlogo} alt="logo"></img>
         </div>
 
 
