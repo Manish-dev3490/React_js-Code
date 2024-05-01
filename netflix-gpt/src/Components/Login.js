@@ -1,17 +1,23 @@
 import { useState, useRef } from "react";
 import { CheckValidation } from "../utils/validate";
 import { Header } from "./Header";
+import { updateProfile } from "firebase/auth";
+import {user_avatar} from "../utils/constant"
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 export const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, seterrorMessage] = useState(null);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const dispatch=useDispatch();
+
 
   function handleSignInFuncationality() {
     setIsSignIn(!isSignIn);
@@ -19,6 +25,7 @@ export const Login = () => {
 
   let email = useRef(null);
   let password = useRef(null);
+  let name = useRef(null);
 
   function handleSignButton() {
     const message = CheckValidation(
@@ -27,15 +34,10 @@ export const Login = () => {
     );
     seterrorMessage(message);
 
-    if (email.current.value === "" || password.current.value === "") {
-      alert("Please enter your data in input fields");
-    }
-
     if (message) return;
 
     if (!isSignIn) {
       // config for sign up
-
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
@@ -44,23 +46,30 @@ export const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          navigate("/browse")
-          console.log(user);
-          // ...
+
+          // update profile
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL: user_avatar,
+          })
+            .then(() => {
+              const {email, displayName, uid,photoURL} = auth.currentUser;
+              dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
+              navigate("/browse");
+            })
+            .catch((error) => {
+              seterrorMessage(error);
+            });
         })
+
         .catch((error) => {
           seterrorMessage("The user have already signed in to the account");
           // ..
         });
     } else {
-      // config for sign in
-
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          navigate("/browse")
-          console.log(user);
+          navigate("/browse");
           // ...
         })
         .catch((error) => {
@@ -70,7 +79,7 @@ export const Login = () => {
   }
 
   return (
-    <div>
+    <>
       <Header />
       <div>
         <img
@@ -101,6 +110,7 @@ export const Login = () => {
         />
         {!isSignIn ? (
           <input
+            ref={name}
             type="text"
             className="text-white bg-gray-700 rounded-lg py-3 bg-opacity-80 px-5 "
             placeholder="Enter your full name"
@@ -109,8 +119,6 @@ export const Login = () => {
           ""
         )}
 
-        {/* 
-                {!isSignIn ? <input type="text" className="text-white bg-gray-700 rounded-lg py-3 bg-opacity-80 px-5 " placeholder="Enter your mobile number" /> : ""} */}
         <p className="text-red-600">{errorMessage}</p>
 
         <button
@@ -128,6 +136,6 @@ export const Login = () => {
             : "New to Netflix ? sign up here"}
         </p>
       </form>
-    </div>
+    </>
   );
 };

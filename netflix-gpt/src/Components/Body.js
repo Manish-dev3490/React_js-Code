@@ -26,11 +26,9 @@ import {useDispatch} from "react-redux"
     useEffect(()=>{
         onAuthStateChanged(auth, (user) => {
             if (user) {
+              const {email, displayName, uid,photoURL} = user;
+              dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
               
-              const {email, displayName, uid} = user;
-              dispatch(addUser({email:email,displayName:displayName,uid:uid}))
-              console.log(addUser);
-              // ...
             } else {
              dispatch(removeUser)
             }
