@@ -23,7 +23,7 @@ export const Header=()=>{
    
 
     useEffect(()=>{
-        onAuthStateChanged(auth, (user) => {
+      const unsubscribe=  onAuthStateChanged(auth, (user) => {
             if (user) {
               const {email, displayName, uid,photoURL} = user;
               dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
@@ -34,6 +34,9 @@ export const Header=()=>{
              navigate("/")
             }
           });
+
+        //   this will call when component will unmount
+          return ()=> unsubscribe
 
     },[])
     
