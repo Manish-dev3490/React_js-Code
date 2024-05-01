@@ -28,18 +28,16 @@ export const Header=()=>{
               const {email, displayName, uid,photoURL} = user;
               dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
               navigate("/browse")
-              window.alert("You are logged in ✅");
               
             } else {
              dispatch(removeUser())
              navigate("/");
-             window.alert("You are logged out 🔴  ");
 
             }
           });
 
         //   this will call when component will unmount
-          return ()=> unsubscribe
+          return ()=> unsubscribe()
 
     },[])
     
@@ -50,11 +48,24 @@ export const Header=()=>{
         </div>
 
 
-        {user&&<div className="flex items-center gap-4 justify-center">
-            <h3 className="text-white ">({user.displayName})</h3>
+        {user&&<div className="flex items-center gap-6 justify-between">
+
+          <div>
+            <ul className="flex items-center gap-10 text-white  mx-20  ">
+              <li className="cursor-pointer hover:text-gray-300">Home</li>
+              <li className="cursor-pointer hover:text-gray-300">Tv Shows</li>
+              <li className="cursor-pointer hover:text-gray-300">Web Series</li>
+              <li className="cursor-pointer hover:text-gray-300">Saved Movies</li>
+
+
+
+            </ul>
+
+          </div>
+            <h3 className="text-white text-sm font-bold ">({user.displayName})</h3>
            { !user?<img alt ="user-img" src={user.photoURL} className="rounded-md h-8 w-8"/>:""}
             <div className="text-white text-3xl">
-                <button onClick={handleSignedOut} className=" text-sm  opacity-95 bg-red-700 py-2 px-2 rounded-md" > Sign Out</button>
+                <button onClick={handleSignedOut} className=" text-sm  opacity-95 bg-red-700 py-2 px-3 rounded-md" > Sign Out</button>
               
                 </div>
 
