@@ -10,6 +10,7 @@ import { netflixlogo } from "../utils/constant";
 
 export const Header=()=>{
     const user=useSelector((store)=>store.user);
+    console.log(user);
     const navigate=useNavigate();
     const dispatch=useDispatch();
 
@@ -27,10 +28,13 @@ export const Header=()=>{
               const {email, displayName, uid,photoURL} = user;
               dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
               navigate("/browse")
+              window.alert("You are logged in ✅");
               
             } else {
              dispatch(removeUser())
-             navigate("/")
+             navigate("/");
+             window.alert("You are logged out 🔴  ");
+
             }
           });
 
@@ -46,9 +50,9 @@ export const Header=()=>{
         </div>
 
 
-        {user&&<div className="flex items-center gap-4">
-            <h3>{user.displayName}</h3>
-            <img alt ="user-img" src={user.photoURL} className="rounded-md h-8 w-8"/>
+        {user&&<div className="flex items-center gap-4 justify-center">
+            <h3 className="text-white ">({user.displayName})</h3>
+           { !user?<img alt ="user-img" src={user.photoURL} className="rounded-md h-8 w-8"/>:""}
             <div className="text-white text-3xl">
                 <button onClick={handleSignedOut} className=" text-sm  opacity-95 bg-red-700 py-2 px-2 rounded-md" > Sign Out</button>
               
