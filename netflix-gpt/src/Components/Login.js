@@ -64,7 +64,7 @@ export const Login = () => {
           // ..
         });
     } else {
-      signInWithEmailAndPassword(auth, email, password)
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
         })
         .catch((error) => {

@@ -15,11 +15,9 @@ export const Header=()=>{
 
     const handleSignedOut=()=>{
         signOut(auth).then(() => {
-            navigate("/");
             // Sign-out successful.
           }).catch((error) => {
             // An error happened.
-            console.log(error);
           });
     }
    
@@ -32,8 +30,7 @@ export const Header=()=>{
               navigate("/browse")
               
             } else {
-             dispatch(removeUser)
-             removeUser({})
+             dispatch(removeUser())
              navigate("/")
             }
           });
