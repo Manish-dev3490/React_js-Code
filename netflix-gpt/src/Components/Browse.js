@@ -1,7 +1,9 @@
+ import {Header} from "../Components/Header"
  export const Browse=()=>{
     return (
-        <div>
-            <h2>Browse page</h2>
-        </div>
+        <>
+        <Header></Header>
+            </>
+        
     )
 }
