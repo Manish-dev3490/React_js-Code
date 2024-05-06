@@ -1,27 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import Api_Options from "../utils/constant"
 
-const Videobackground = () => {
-  const dispatch = useDispatch();
-  const movies = useSelector((store) => store.movies?.nowplayingmovies);
-  if (!movies) return;
+const Videobackground = ({id}) => {
 
-  function generateRandomNumber(min, max) {
-    const randomDecimal = Math.random();
+    const getTrailor= async ()=>{
+        const response=await fetch("https://api.themoviedb.org/3/movie/movie_id/videos?language=en-US'", Api_Options);
+        const json=response.json();
+        console.log(json);
 
-    const randomInRange = Math.floor(randomDecimal * (max - min + 1)) + min;
-
-    return randomInRange;
-}
-
-const randomNumber = generateRandomNumber(1, 19);
-
-  const mainMovieOnBackground = movies[randomNumber];
-  console.log(mainMovieOnBackground);
-
+    }
+    useEffect(()=>{
+        getTrailor()
+    },[])
   return (
-    
-  <div>Videobackground</div>
-
-)
+    <></>
+  )
+  
 };
 export default Videobackground;
