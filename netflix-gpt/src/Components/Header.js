@@ -10,7 +10,6 @@ import { netflixlogo } from "../utils/constant";
 
 export const Header=()=>{
     const user=useSelector((store)=>store.user);
-    console.log(user);
     const navigate=useNavigate();
     const dispatch=useDispatch();
 
