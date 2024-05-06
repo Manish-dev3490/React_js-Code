@@ -1,20 +1,16 @@
-import { useEffect } from "react";
-import Api_Options from "../utils/constant"
+import { useSelector } from "react-redux";
+import useMovieTrailor from "../hooks/useMovieTrailor";
 
-const Videobackground = ({id}) => {
+const Videobackground = ({ id }) => {
+    const ShowTrailor = useSelector((store) => store.movies.movietrailor);
+    useMovieTrailor(id);
 
-    const getTrailor= async ()=>{
-        const response=await fetch("https://api.themoviedb.org/3/movie/movie_id/videos?language=en-US'", Api_Options);
-        const json=response.json();
-        console.log(json);
 
-    }
-    useEffect(()=>{
-        getTrailor()
-    },[])
-  return (
-    <></>
-  )
-  
+    return (
+        <>
+            <iframe width="560" height="315" src={"https://www.youtube.com/embed/" + ShowTrailor?.key} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        </>
+    )
+
 };
 export default Videobackground;

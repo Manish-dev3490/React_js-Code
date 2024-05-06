@@ -1,8 +1,8 @@
-const VideoTitle=({original_title,overview})=>{
+const VideoTitle=({title,overview})=>{
     return (
-        <div>
-            <p>{original_title}</p>
-            <p>{overview}</p>
+        <div className="px-10">
+            <h2 className="text-3xl">{title}</h2>
+            <p className=" w-4/12">{overview}</p>
         </div>
     )
 }
