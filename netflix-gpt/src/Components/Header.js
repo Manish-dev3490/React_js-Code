@@ -41,26 +41,22 @@ export const Header=()=>{
     },[])
     
     return (
-        <div className={user?"px-12 py-3 flex justify-between  items-center bg-opacity-90":"px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"}> 
+        <div className={user?"px-12 py-3 flex bg-gradient-to-b bg-black  from-black justify-between absolute z-10 text-white w-screen items-center bg-opacity-90":"px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"}> 
         <div className="">
             <img className=" w-48 " src={netflixlogo} alt="logo"></img>
         </div>
 
 
         {user&&<div className="flex items-center gap-6 justify-between">
-
           <div>
             <ul className="flex items-center gap-10  mx-20  ">
               <li className="cursor-pointer hover:text-red-500">Home</li>
               <li className="cursor-pointer hover:text-red-500">Tv Shows</li>
               <li className="cursor-pointer hover:text-red-500">Web Series</li>
               <li className="cursor-pointer hover:text-red-500">Saved Movies</li>
-
-
-
             </ul>
-
           </div>
+
             <h3 className=" text-sm font-bold ">({user.displayName})</h3>
            { !user?<img alt ="user-img" src={user.photoURL} className="rounded-md h-8 w-8"/>:""}
             <div className=" text-3xl">

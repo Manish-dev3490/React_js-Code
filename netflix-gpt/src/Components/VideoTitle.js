@@ -1,13 +1,15 @@
+import 'remixicon/fonts/remixicon.css'
+
 const VideoTitle = ({ title, overview }) => {
     return (
-        <div className="px-10">
+        <div className="px-12 h-[68vh]  bg-gradient-to-t from-black w-screen absolute top-[36%] text-white">
 
-            <h2 className="text-3xl">{title}</h2>
-            <p className=" w-4/12">{overview}</p>
+            <h2 className="py-8 text-5xl text-bold">{title}</h2>
+            <p className=" w-8/12">{overview}</p>
 
-            <div className="flex gap-4">
-                <button className="px-6 py-2 bg-gray-200 rounded-lg">▶️ Play</button>
-                <button className="px-6 py-2 bg-gray-200 rounded-lg">! More Info</button>
+            <div className="flex gap-4 py-8">
+                <button className="px-8 py-2 bg-gray-200 text-lg text-black rounded-lg hover:opacity-60"><i className="ri-play-circle-fill"></i> Play</button>
+                <button className="px-8 py-2 bg-black text-lg text-white rounded-lg hover:opacity-60"><i className="ri-information-fill"></i> More Info</button>
             </div>
 
 
