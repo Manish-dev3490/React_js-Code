@@ -15,7 +15,7 @@ const useMovieTrailor=(id) => {
         dispatch(addMovieTrailor(originalTrailor));
     
     
-    }
+    } 
    
     useEffect(() => {
         getTrailor()
