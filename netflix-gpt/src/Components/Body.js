@@ -15,7 +15,12 @@ import {createBrowserRouter ,RouterProvider} from "react-router-dom"
         },
         {
             path:"/browse",
-            element:<Browse />
+            element:<Browse />,
+            
+        },
+        {
+            path:"/home",
+            element:<Browse/>
         }
     ])
 

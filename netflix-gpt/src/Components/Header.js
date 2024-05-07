@@ -1,12 +1,13 @@
 import { useSelector } from "react-redux"
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import {  onAuthStateChanged } from "firebase/auth";
 import {addUser, removeUser} from "../utils/userSlice"
 import {useDispatch} from "react-redux"
 import { useEffect} from "react"
 import { netflixlogo } from "../utils/constant";
+import { Browse } from "./Browse";
 
 export const Header=()=>{
     const user=useSelector((store)=>store.user);
@@ -52,8 +53,9 @@ export const Header=()=>{
             <ul className="flex items-center gap-10  mx-20  ">
               <li className="cursor-pointer hover:text-red-500">Home</li>
               <li className="cursor-pointer hover:text-red-500">Tv Shows</li>
+              <li className="cursor-pointer hover:text-red-500">Trending</li>
               <li className="cursor-pointer hover:text-red-500">Web Series</li>
-              <li className="cursor-pointer hover:text-red-500">Saved Movies</li>
+              <li className="cursor-pointer hover:text-red-500">My Saved Movies</li>
             </ul>
           </div>
 
