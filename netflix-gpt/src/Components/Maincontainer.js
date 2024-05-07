@@ -17,7 +17,6 @@ export const Maincontainer = () => {
   const randomNumber = generateRandomNumber(1, 19);
 
   const mainMovieOnBackground = movies[randomNumber];
-  console.log(mainMovieOnBackground);
   const { id, overview, original_title} = mainMovieOnBackground;
 
   return (

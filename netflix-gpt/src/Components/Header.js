@@ -41,7 +41,7 @@ export const Header=()=>{
     },[])
     
     return (
-        <div className={user?"px-12 py-3 flex bg-gradient-to-b bg-black  from-black justify-between absolute z-10 text-white w-screen items-center bg-opacity-90":"px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"}> 
+        <div className={user?"px-8 fixed py-3 flex bg-gradient-to-b bg-black  from-black justify-between  z-10 text-white w-screen items-center bg-opacity-90":"px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"}> 
         <div className="">
             <img className=" w-48 " src={netflixlogo} alt="logo"></img>
         </div>
