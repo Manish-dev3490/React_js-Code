@@ -8,7 +8,7 @@ import {useSelector} from "react-redux"
         <div className="bg-black flex flex-col gap-64 ">
             <MovieList title={"Now Playing"} moviesData={moviesNowPlaying.nowplayingmovies}/>
             <MovieList title={"Popular Movies"} moviesData={moviesNowPlaying.popularmovies}/>
-
+            <MovieList title={"Top rated Movies"} moviesData={moviesNowPlaying.topratedmovies}/>
         </div>
     )
 
