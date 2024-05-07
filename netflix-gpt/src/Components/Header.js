@@ -57,7 +57,7 @@ export const Header=()=>{
             </ul>
           </div>
 
-            <h3 className=" text-sm font-bold ">({user.displayName})</h3>
+            <h3 className=" text-md text-red-500 font-bold ">({user.displayName})</h3>
            { !user?<img alt ="user-img" src={user.photoURL} className="rounded-md h-8 w-8"/>:""}
             <div className=" text-3xl">
                 <button onClick={handleSignedOut} className=" text-sm hover:bg-red-400  opacity-95 bg-red-700 py-2 px-3 rounded-md" > Sign Out</button>
