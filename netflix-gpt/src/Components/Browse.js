@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 export const Browse = () => {
 
-    const GPTCertificate=useSelector((store)=>store.GPTPage.toggleGptPage);
+  const GPTCertificate=useSelector((store)=>store?.GPTPage?.toggleGptPage);
     useMoviePlaying();
     usePopularMovie();
     useTopRatedMovies();

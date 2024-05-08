@@ -1,9 +1,14 @@
- export const GPTSearchBar=()=>{
+import {useSelector} from "react-redux"
+import LanguageSupport from "../utils/LanguageSupport";
+export const GPTSearchBar=()=>{
+    const LangToShow=useSelector((store)=>store?.LanguageToChoose?.lang);
+    console.log(LangToShow);
     return (
     <div>
-        <form className="w-[52vw] py-2 rounded-lg  justify-center bg-white mt-28  flex">
-            <input className="w-[44vw] bg-black text-white font-bold rounded-lg pl-4  " type="text" placeholder="What would you like to search "/>
-            <button className="w-[6vw] bg-black ml-4 text-white rounded-lg py-3">Search</button>
+        <form className="w-[53vw] py-3 rounded-lg  justify-center bg-black mt-32 flex">
+            <input className="w-[44vw] bg-white text-black font-bold rounded-lg pl-4" 
+            type="text" placeholder={LanguageSupport[LangToShow].placeholder}/>
+            <button className="w-[6vw] bg-red-700 ml-4 text-white rounded-lg py-3">{LanguageSupport[LangToShow].search}</button>
         </form>
     </div>
     )
