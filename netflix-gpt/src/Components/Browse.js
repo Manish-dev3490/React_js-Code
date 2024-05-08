@@ -5,9 +5,12 @@ import { useTopRatedMovies } from "../hooks/useTopRatedMovies";
 import { useUpcomingMovies } from "../hooks/useUpcomingMovies";
 import { Maincontainer } from "./Maincontainer";
 import { SecondryContainer } from "./SecondryContainer";
+import {GPTSearchPage} from "../Components/GPTSearchPage"
+import { useSelector } from "react-redux";
 
 export const Browse = () => {
 
+    const GPTCertificate=useSelector((store)=>store.GPTPage.toggleGptPage);
     useMoviePlaying();
     usePopularMovie();
     useTopRatedMovies();
@@ -19,8 +22,9 @@ export const Browse = () => {
     return (
         <>
             <Header></Header>
-            <Maincontainer></Maincontainer>
-            <SecondryContainer></SecondryContainer>
+            {GPTCertificate?<GPTSearchPage/>:<><Maincontainer></Maincontainer>
+            <SecondryContainer></SecondryContainer></>}
+            
 
         </>
 
