@@ -2,7 +2,6 @@ import {useSelector} from "react-redux"
 import LanguageSupport from "../utils/LanguageSupport";
 export const GPTSearchBar=()=>{
     const LangToShow=useSelector((store)=>store?.LanguageToChoose?.lang);
-    console.log(LangToShow);
     return (
     <div>
         <form className="w-[53vw] py-3 rounded-lg  justify-center bg-black mt-32 flex">

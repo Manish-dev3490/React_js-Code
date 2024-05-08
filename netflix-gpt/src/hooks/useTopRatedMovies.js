@@ -12,7 +12,6 @@ import {  addTopRatedMovies } from "../utils/movieSlice"
     const getTopRatedMovies = async () => {
         const response = await fetch('https://api.themoviedb.org/3/movie/top_rated?page=1', Api_Options);
         const json = await response.json();
-        console.log(json.results);
         dispatch(addTopRatedMovies(json.results))
     }
 

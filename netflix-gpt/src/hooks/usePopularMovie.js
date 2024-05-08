@@ -12,7 +12,6 @@ import { addPopularMovies } from "../utils/movieSlice"
     const getPopularMovieData = async () => {
         const response = await fetch('https://api.themoviedb.org/3/movie/popular?page=1', Api_Options);
         const json = await response.json();
-        console.log(json.results);
         dispatch(addPopularMovies(json.results))
     }
 
