@@ -14,6 +14,8 @@ export const Browse = () => {
     useUpcomingMovies();
 
 
+   
+
     return (
         <>
             <Header></Header>

@@ -3,6 +3,10 @@
 import { Browse } from "./Browse"
 import { Login } from "./Login"
 import {createBrowserRouter ,RouterProvider} from "react-router-dom"
+import TvShowsPage from "./TvShows"
+import TrendingPage from "./Trending"
+import WebSeriesPage from "./WebSeries"
+import MySavedMoviesPage from "./MySavedMovies"
 
 
  export const Body=()=>{
@@ -19,8 +23,20 @@ import {createBrowserRouter ,RouterProvider} from "react-router-dom"
             
         },
         {
-            path:"/home",
-            element:<Browse/>
+            path:"/tvshows",
+            element:<TvShowsPage/>
+        },
+        {
+            path:"/trending",
+            element:<TrendingPage/>
+        },
+        {
+            path:"/webseries",
+            element:<WebSeriesPage/>
+        },
+        {
+            path:"/mysavedmovies",
+            element:<MySavedMoviesPage/>
         }
     ])
 
