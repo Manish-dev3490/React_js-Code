@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux"
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
-import {Link, useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import {  onAuthStateChanged } from "firebase/auth";
 import {addUser, removeUser} from "../utils/userSlice"
 import {useDispatch} from "react-redux"
 import { useEffect} from "react"
 import { netflixlogo } from "../utils/constant";
-import { Browse } from "./Browse";
+import 'remixicon/fonts/remixicon.css'
+
 
 export const Header=()=>{
     const user=useSelector((store)=>store.user);
@@ -56,6 +57,8 @@ export const Header=()=>{
               <li className="cursor-pointer hover:text-red-500">Trending</li>
               <li className="cursor-pointer hover:text-red-500">Web Series</li>
               <li className="cursor-pointer hover:text-red-500">My Saved Movies</li>
+              <button className="px-2  py-2 rounded-lg flex items-center ">GPT Search <span><i class=" ml-2 ri-search-eye-line"></i></span></button>
+
             </ul>
           </div>
 
