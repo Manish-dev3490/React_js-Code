@@ -14,3 +14,5 @@
   export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500/";
 
   export const SUPPORTED_LANGS=[{identifier:"en",name:"English"},{identifier:"hi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}]
+
+   export const OPEN_AI_GPTKEY="sk-proj-8ZT155weAqLYDU4ZchRhT3BlbkFJPfCh0FOb98VuSQcib78I";
