@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 export const Browse = () => {
 
   const GPTCertificate=useSelector((store)=>store?.GPTPage?.toggleGptPage);
+
     useMoviePlaying();
     usePopularMovie();
     useTopRatedMovies();
@@ -21,9 +22,11 @@ export const Browse = () => {
 
     return (
         <>
+            
             <Header></Header>
             {GPTCertificate?<GPTSearchPage/>:<><Maincontainer></Maincontainer>
             <SecondryContainer></SecondryContainer></>}
+            
             
 
         </>

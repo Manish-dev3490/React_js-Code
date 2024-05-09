@@ -7,6 +7,7 @@ import TvShowsPage from "./TvShows"
 import TrendingPage from "./Trending"
 import WebSeriesPage from "./WebSeries"
 import MySavedMoviesPage from "./MySavedMovies"
+import MovieDetailPage from "./MovieDetail"
 
 
  export const Body=()=>{
@@ -37,6 +38,9 @@ import MySavedMoviesPage from "./MySavedMovies"
         {
             path:"/mysavedmovies",
             element:<MySavedMoviesPage/>
+        },{
+            path:"/moviedetail",
+            element:<MovieDetailPage/>
         }
     ])
 

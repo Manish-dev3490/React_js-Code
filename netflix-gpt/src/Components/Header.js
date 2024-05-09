@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/Firebase";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice"
 import { useDispatch } from "react-redux"
@@ -35,7 +35,8 @@ export const Header = () => {
       if (user) {
         const { email, displayName, uid, photoURL } = user;
         dispatch(addUser({ email: email, displayName: displayName, uid: uid, photoURL: photoURL }))
-        navigate("/browse")
+        
+              navigate("/browse")
 
       } else {
         dispatch(removeUser())
@@ -57,6 +58,8 @@ export const Header = () => {
   const handleSupportedLang=()=>{
     dispatch(addlang(LangName.current.value))
   }
+
+ 
   return (
     <div className={user ? "px-8 fixed py-3 z-50 flex bg-gradient-to-b bg-black  from-black justify-between  text-white w-screen items-center bg-opacity-90" : "px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"}>
       <div className="">
@@ -67,9 +70,9 @@ export const Header = () => {
       {user && <div className="flex items-center gap-6 justify-between">
         <div>
           <ul className="flex items-center gap-10  mx-20  ">
-            <li className="cursor-pointer hover:text-red-500">Tv Shows</li>
-            <li className="cursor-pointer hover:text-red-500">Trending</li>
-            <li className="cursor-pointer hover:text-red-500">Web Series</li>
+          <li className="cursor-pointer hover:text-red-500"> Tv Shows </li>
+            <li className="cursor-pointer hover:text-red-500">Trending </li>
+            <li className="cursor-pointer hover:text-red-500">web Series</li>
             <li className="cursor-pointer hover:text-red-500">My Saved Movies</li>
 
             <button className="px-2 py-2 rounded-lg flex items-center" onClick={handleGPTToggle}>
