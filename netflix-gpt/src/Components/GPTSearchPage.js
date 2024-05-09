@@ -6,7 +6,7 @@ import { GPTSearchBar } from "./GPTSearchBar"
         <div className="absolute z-40 w-[100vw]  mt-24">
          <div>
         <img
-          className="w-full bg-gradient-to-b -z-10 from-black absolute"
+          className="w-full bg-gradient-to-t -z-10 from-black absolute"
           src={heroImage}
           alt="background"
         />

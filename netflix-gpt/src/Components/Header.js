@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { SUPPORTED_LANGS, netflixlogo } from "../utils/constant";
 import 'remixicon/fonts/remixicon.css'
-import { addToggleToGPTButton } from "../utils/GPTSlice";
+import { addToggleToGPTButton, removeGPTMovieandTitle } from "../utils/GPTSlice";
 import { useRef } from "react";
 import { addlang } from "../utils/LanguageConfig";
 
@@ -16,6 +16,7 @@ import { addlang } from "../utils/LanguageConfig";
 export const Header = () => {
 
   const GPTCertificate = useSelector((store) => store?.GPTPage?.toggleGptPage);
+  const {GPTSearchMovieResults}=useSelector((store)=>store?.GPTPage);
   const user = useSelector((store) => store?.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ export const Header = () => {
 
   const handleGPTToggle = () => {
     dispatch(addToggleToGPTButton());
+    dispatch(removeGPTMovieandTitle(GPTSearchMovieResults));
   }
 
   const handleSupportedLang=()=>{
