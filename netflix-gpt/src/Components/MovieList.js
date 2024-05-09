@@ -1,5 +1,5 @@
-import { MovieCard } from "./MovieCard"
-
+import { MovieCard } from "./MovieCard";
+import {Link} from "react-router-dom";
 export const MovieList = ({ title, moviesData }) => {
 
    
@@ -11,7 +11,7 @@ export const MovieList = ({ title, moviesData }) => {
                 <div className="flex">
                     {moviesData?.map(card => (
                         
-                            <MovieCard key={card.id}   poster_path={card.poster_path} />
+                            <Link to ={"/moviedetail"}><MovieCard key={card.id}   poster_path={card.poster_path} /></Link>
                         
                     ))}
                 </div>
