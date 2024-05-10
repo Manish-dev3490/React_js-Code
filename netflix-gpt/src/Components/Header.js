@@ -6,21 +6,16 @@ import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice"
 import { useDispatch } from "react-redux"
 import { useEffect } from "react"
-import { SUPPORTED_LANGS, netflixlogo } from "../utils/constant";
+import { netflixlogo } from "../utils/constant";
 import 'remixicon/fonts/remixicon.css'
-import { addToggleToGPTButton, removeGPTMovieandTitle } from "../utils/GPTSlice";
-import { useRef } from "react";
-import { addlang } from "../utils/LanguageConfig";
 
 
 export const Header = () => {
 
   const GPTCertificate = useSelector((store) => store?.GPTPage?.toggleGptPage);
-  const {GPTSearchMovieResults}=useSelector((store)=>store?.GPTPage);
   const user = useSelector((store) => store?.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const LangName=useRef(null);
 
   const handleSignedOut = () => {
     signOut(auth).then(() => {
@@ -53,14 +48,7 @@ export const Header = () => {
 
   }, [])
 
-  const handleGPTToggle = () => {
-    dispatch(addToggleToGPTButton());
-    dispatch(removeGPTMovieandTitle(GPTSearchMovieResults));
-  }
-
-  const handleSupportedLang=()=>{
-    dispatch(addlang(LangName.current.value))
-  }
+  
 
  
   return (
@@ -81,13 +69,9 @@ export const Header = () => {
             <li className="cursor-pointer hover:text-red-500">My Saved Movies</li>
 
             
-            <button className="px-2 py-2 rounded-lg flex items-center" onClick={handleGPTToggle}>
-              {GPTCertificate ? "Browser Home" : (<> GPT Search <span><i className="ml-2 ri-search-eye-line"></i></span></>
-              )}
-            </button>{GPTCertificate&&
-            <select className="bg-black text-white text-lg px-2 py-2" ref={LangName} onClick={handleSupportedLang}>
-              {SUPPORTED_LANGS.map(lang=><option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
-            </select>}
+          
+            <button className="px-2 py-2 rounded-lg flex items-center">AI Search</button>
+            
 
           </ul>
         </div>
