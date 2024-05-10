@@ -35,12 +35,15 @@ export const Header = () => {
       if (user) {
         const { email, displayName, uid, photoURL } = user;
         dispatch(addUser({ email: email, displayName: displayName, uid: uid, photoURL: photoURL }))
-        
-              navigate("/browse")
+        if (window.location.pathname === "/") {
+          navigate("/browse");
+        }
 
       } else {
         dispatch(removeUser())
-        navigate("/");
+        if (window.location.pathname !== "/") {
+          navigate("/");
+        }
 
       }
     });

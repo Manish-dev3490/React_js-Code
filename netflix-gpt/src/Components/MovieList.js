@@ -11,7 +11,7 @@ export const MovieList = ({ title, moviesData }) => {
                 <div className="flex">
                     {moviesData?.map(card => (
                         
-                            <Link to ={"/moviedetail"}><MovieCard key={card.id}   poster_path={card.poster_path} /></Link>
+                        <MovieCard key={card.id}   poster_path={card.poster_path} />
                         
                     ))}
                 </div>

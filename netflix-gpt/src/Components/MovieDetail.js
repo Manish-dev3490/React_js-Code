@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import {Header} from "./Header"
+import { Header } from "./Header";
 
 const MovieDetailPage=()=>{
 
@@ -8,6 +8,7 @@ const MovieDetailPage=()=>{
     return (
         <>
         <Header/>
+        hello
        </>
     )
 }
