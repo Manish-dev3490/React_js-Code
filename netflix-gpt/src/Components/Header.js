@@ -65,12 +65,14 @@ export const Header = () => {
  
   return (
     <div className={user ? "px-8 fixed py-3 z-50 flex bg-gradient-to-b bg-black  from-black justify-between  text-white w-screen items-center bg-opacity-90" : "px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"}>
+      <Link to={"/browse"}>
       <div className="">
         <img className=" w-48 " src={netflixlogo} alt="logo"></img>
       </div>
+      </Link>
 
 
-      {user && <div className="flex items-center gap-6 justify-between">
+      {user&& <div className="flex items-center gap-6 justify-between">
         <div>
           <ul className="flex items-center gap-10  mx-20  ">
           <li className="cursor-pointer hover:text-red-500"> Tv Shows </li>
@@ -78,6 +80,7 @@ export const Header = () => {
             <li className="cursor-pointer hover:text-red-500">web Series</li>
             <li className="cursor-pointer hover:text-red-500">My Saved Movies</li>
 
+            
             <button className="px-2 py-2 rounded-lg flex items-center" onClick={handleGPTToggle}>
               {GPTCertificate ? "Browser Home" : (<> GPT Search <span><i className="ml-2 ri-search-eye-line"></i></span></>
               )}

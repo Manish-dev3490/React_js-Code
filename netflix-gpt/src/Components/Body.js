@@ -39,7 +39,7 @@ import MovieDetailPage from "./MovieDetail"
             path:"/mysavedmovies",
             element:<MySavedMoviesPage/>
         },{
-            path:"/moviedetail",
+            path:"/moviedetail/:id",
             element:<MovieDetailPage/>
         }
     ])
