@@ -33,8 +33,6 @@ export const GPtMainContainer = () => {
     const GPTMoviesResults = await Promise.all(promiseArray);
     dispatch(addGPTResultMovies(GPTMoviesResults));
     
-
-
   }
 
 
@@ -54,7 +52,7 @@ export const GPtMainContainer = () => {
       </form>
 
     <div className="mt-[35%] flex flex-col bg-black gap-60">
-      {gptmoviesresult? gptmoviesresult.map((movieList,index)=><MovieList title={SearchText.current.value} moviesData={movieList}/>):""}
+      {gptmoviesresult? gptmoviesresult.map((movieList,index)=><MovieList key={index} title={SearchText.current.value} moviesData={movieList}/>):""}
       </div>
     </div>
   )

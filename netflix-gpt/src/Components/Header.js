@@ -8,11 +8,12 @@ import { useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { netflixlogo } from "../utils/constant";
 import 'remixicon/fonts/remixicon.css'
+import { removeGPTMovies } from "../utils/GPTSlice";
 
 
 export const Header = () => {
-
   const user = useSelector((store) => store?.user);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -53,7 +54,7 @@ export const Header = () => {
   return (
     <div className={user ? "px-8 fixed py-3 z-50 flex bg-gradient-to-b bg-black  from-black justify-between  text-white w-screen items-center bg-opacity-90" : "px-12 py-3  bg-gradient-to-b from-black flex justify-between bg-black items-center bg-opacity-90"}>
       <Link to={"/browse"}>
-        <div className="">
+        <div className="" onClick={()=>dispatch(removeGPTMovies())}>
           <img className=" w-48 " src={netflixlogo} alt="logo"></img>
         </div>
       </Link>
@@ -69,7 +70,7 @@ export const Header = () => {
 
 
 
-            <Link to={"/GPTSearchPage"}><button className="px-2 py-2 rounded-lg flex items-center">Gemini Search</button></Link>
+            <Link to={"/GPTSearchPage"}><button className="px-2 py-2  flex items-center  hover:border-b-2  border-red-600">Gemini Search</button></Link>
 
 
           </ul>
