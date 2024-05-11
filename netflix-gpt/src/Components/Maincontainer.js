@@ -20,9 +20,9 @@ export const Maincontainer = () => {
   const { id, overview, original_title} = mainMovieOnBackground;
 
   return (
-    <>
+    <div className="w-screen">
       <Videobackground id={id} />
       <VideoTitle title={original_title} overview={overview} />
-    </>
+    </div>
   )
 }

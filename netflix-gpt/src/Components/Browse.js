@@ -22,8 +22,8 @@ export const Browse = () => {
         <>
             
             <Header></Header>
-            <><Maincontainer></Maincontainer>
-            <SecondryContainer></SecondryContainer></>
+            <div><Maincontainer></Maincontainer>
+            <SecondryContainer></SecondryContainer></div>
             
             
 
