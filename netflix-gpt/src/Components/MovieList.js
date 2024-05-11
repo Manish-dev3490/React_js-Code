@@ -5,7 +5,7 @@ export const MovieList = ({ title, moviesData }) => {
     if(!moviesData)return null;
    
   return(
-        <div className="text-white   -mt-52 relative ">
+        <div className="text-white px-10  -mt-52 relative ">
             <h2 className="text-3xl">{title}</h2>
 
             <div className="flex overflow-x-scroll gap-6 mt-5 whitespace-nowrap overflow-auto scrollbar-hide ">

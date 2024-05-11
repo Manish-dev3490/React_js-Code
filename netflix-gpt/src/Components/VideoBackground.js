@@ -10,8 +10,8 @@ const Videobackground = ({ id }) => {
 
     return (
     
-        <div className="w-screen aspect-video relative">
-            <iframe className="w-screen aspect-video " src={"https://www.youtube.com/embed/" + ShowTrailor?.key +"?mute=1&autoplay=1"} title="YouTube video player" allow="accelerometer" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        <div className="w-screen h-[100vh] aspect-video relative">
+            <iframe className="w-screen aspect-video h-[100vh]" src={"https://www.youtube.com/embed/" + ShowTrailor?.key +"?mute=1&autoplay=1"} title="YouTube video player" ></iframe>
             </div>
     )
 
