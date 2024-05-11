@@ -8,9 +8,12 @@ const GPTSlice=createSlice({
     reducers:{
         addGPTResultMovies:(state,action)=>{
             state.gptmoviesresult=action.payload;
+        },
+        addGPTMoviesName:(state,action)=>{
+            state.gptmoviesname=action.payload;
         }
     }
 })
 
 export default GPTSlice.reducer;
-export const {addGPTResultMovies}=GPTSlice.actions
+export const {addGPTResultMovies,addGPTMoviesName}=GPTSlice.actions

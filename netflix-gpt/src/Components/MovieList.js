@@ -8,7 +8,7 @@ export const MovieList = ({ title, moviesData }) => {
             <h2 className="text-3xl">{title}</h2>
 
             <div className="flex overflow-x-scroll gap-6 mt-5 whitespace-nowrap overflow-auto scrollbar-hide ">
-                <div className="flex">
+                <div className="flex ">
                     {moviesData?.map(card => (
                         
                         <Link to={`/moviedetail/${card.id}`} key={card.id}> <MovieCard  poster_path={card.poster_path} /></Link> 
