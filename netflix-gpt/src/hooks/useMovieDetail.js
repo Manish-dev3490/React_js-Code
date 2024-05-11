@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Api_Options } from "../utils/constant"
 import { useParams } from "react-router-dom"
 import { useDispatch } from "react-redux";
-import { addMovieDetail, addMovieDetailVideo } from "../utils/movieSlice";
+import { addMovieDetail, addMovieDetailVideo, removeMovieDetail, removeMovieDetailVideo } from "../utils/movieSlice";
 
 export const useMovieDetail = () => {
     const dispatch = useDispatch();
@@ -12,7 +12,7 @@ export const useMovieDetail = () => {
     const getMovieDetail = async () => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?`, Api_Options);
         const json = await response.json();
-        dispatch(addMovieDetail(json))
+        dispatch(addMovieDetail(json));
     }
 
     const getMovieVideo = async () => {

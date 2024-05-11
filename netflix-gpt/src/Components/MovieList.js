@@ -4,6 +4,7 @@ export const MovieList = ({ title, moviesData }) => {
 
     if(!moviesData)return null;
    
+   
   return(
         <div className="text-white px-10  -mt-52 relative ">
             <h2 className="text-3xl">{title}</h2>
@@ -12,7 +13,7 @@ export const MovieList = ({ title, moviesData }) => {
                 <div className="flex ">
                     {moviesData?.map(card => (
                     
-                        <Link to={`/moviedetail/${card.id}`} key={card.id}> <MovieCard  poster_path={card.poster_path} /></Link> 
+                        <Link   to={`/moviedetail/${card.id}`} key={card.id}> <MovieCard  poster_path={card.poster_path} /></Link> 
                         
                     ))}
                 </div>

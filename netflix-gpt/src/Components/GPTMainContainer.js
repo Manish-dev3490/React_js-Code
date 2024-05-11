@@ -12,7 +12,6 @@ export const GPtMainContainer = () => {
   const SearchText = useRef(null);
   const MovieGPtResult=useSelector((store)=>store?.GPTMovieResult);
   const {gptmoviesresult}=MovieGPtResult;
-  console.log(gptmoviesresult);
 
   const searchTMDBMovies = async (movie) => {
     const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${movie}&page=1`, Api_Options);
