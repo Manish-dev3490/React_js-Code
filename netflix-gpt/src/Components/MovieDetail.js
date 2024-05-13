@@ -11,11 +11,10 @@ const MovieDetailPage = () => {
     const RecommendedData=useSelector((store)=>store?.movies?.recommendedmovies);
     useMovieDetail();
     RecommendedMovies();
-    if(!moviedetail && moviedetailVideo)return null;
 
 
 
-    return (
+    return moviedetail&&(
         <>
             <Header />
             {moviedetailVideo &&

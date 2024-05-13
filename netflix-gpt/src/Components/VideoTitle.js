@@ -3,7 +3,7 @@ import 'remixicon/fonts/remixicon.css'
 const VideoTitle = ({ title, overview }) => {
 
     return (
-        <div className="px-12 h-[78vh]  bg-gradient-to-t from-black w-screen absolute top-[35%] text-white">
+        <div className="px-12 h-[78vh]  bg-gradient-to-t from-black w-screen absolute top-[32%] text-white">
 
             <h2 className="py-8 text-5xl text-bold">{title}</h2>
             <p className=" w-10/12">{overview}</p>
