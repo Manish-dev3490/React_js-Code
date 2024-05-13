@@ -16,3 +16,4 @@
   export const SUPPORTED_LANGS=[{identifier:"en",name:"English"},{identifier:"hi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}]
 
   export const GEMINI_APIKey="AIzaSyAMKYViFdkLTSTWrNK2F-fb1niOYVZN0-Q";
+  export const EMPTY_CartIMG="https://cdn3.iconfinder.com/data/icons/shopping-and-ecommerce-28/90/empty_cart-512.png";

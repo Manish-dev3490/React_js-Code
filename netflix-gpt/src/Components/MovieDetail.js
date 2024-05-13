@@ -30,7 +30,7 @@ const MovieDetailPage = () => {
                  <VideoTitle title={moviedetail?.original_title} overview={moviedetail?.overview}/>
                  <Movieinfo/>
                  <div className="h-[50vh] bg-black mt-52">
-                 {RecommendedData&&<MovieList title={"Recommended movies"} moviesData={RecommendedData}/>}
+                 {RecommendedData?<MovieList title={"Recommended movies"} moviesData={RecommendedData}/>:""}
                  </div>
      
                  </div>
