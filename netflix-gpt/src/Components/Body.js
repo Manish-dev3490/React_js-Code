@@ -23,10 +23,7 @@ import { GPTSearchPage } from "./GPTSearchPage"
             element:<Browse />,
             
         },
-        {
-            path:"/tvshows",
-            element:<TvShowsPage/>
-        },
+       
         {
             path:"/trending",
             element:<TrendingPage/>
