@@ -50,7 +50,7 @@ export const GPtMainContainer = () => {
         <button className="ml-4 text-lg px-4  bg-white text-black rounded-lg" onClick={handleGPTSearchClick}>Search</button>
       </form>
 
-    <div className="mt-[35%] flex flex-col bg-black gap-60">
+    <div className="mt-[40%] flex flex-col bg-black gap-60">
       {gptmoviesresult? gptmoviesresult.map((movieList,index)=><MovieList key={index} title={SearchText.current.value} moviesData={movieList}/>):""}
       </div>
     </div>
