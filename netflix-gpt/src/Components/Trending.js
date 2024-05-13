@@ -7,24 +7,29 @@ import { addPageNumber } from "../utils/movieSlice";
 
 const TrendingPage = () => {
     const Trendingdata = useSelector((store) => store?.movies?.trendingmovie);
-    const dispatch=useDispatch();
-    const page = useSelector((store) => store?.movies?.pagenumber); 
+    const dispatch = useDispatch();
+    const page = useSelector((store) => store?.movies?.pagenumber);
 
     useTrending(page);
-    if(!Trendingdata) return null;
+    if (!Trendingdata) return null;
 
 
-    const LoadMoreMovies=()=>{
-    dispatch(addPageNumber())
+    const LoadMoreMovies = () => {
+        dispatch(addPageNumber())
     }
     return (
         <>
             <Header />
-            <div className="flex flex-wrap bg-black gap-6 justify-center relative  py-28">
-                {Trendingdata&&Trendingdata.map((card) => <Link key={card?.id} to={`/moviedetail/${card.id}`}> <MovieCard poster_path={card.poster_path} /></Link>)}
+            <div className="flex flex-wrap flex-col bg-black justify-center items-center">
+                <div className="flex flex-wrap  gap-6 justify-center relative  py-28">
+                    {Trendingdata && Trendingdata.map((card) => <Link key={card?.id} to={`/moviedetail/${card.id}`}> <MovieCard poster_path={card.poster_path} /></Link>)}
 
+                </div>
+
+                <button onClick={LoadMoreMovies} className="bg-red-700 w-32 px-4 rounded-md font-medium text-white py-2 cursor-pointer">Load More</button>
             </div>
-            <button onClick={LoadMoreMovies} className="bg-red-700 absolute left-[48%] px-4 -bottom-[77%] rounded-md font-medium text-white py-2 cursor-pointer">Load More</button>
+
+
 
 
         </>
