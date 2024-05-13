@@ -16,7 +16,7 @@ export const Movieinfo = () => {
     }
 
     return (
-        <div className=" absolute top-[73%]   flex flex-col gap-3 text-white px-12">
+        <div className=" absolute top-[72%]   flex flex-col gap-2 text-white px-12">
             <p className="flex gap-8 items-center">Release Date - {release_date}</p>
             <p className="flex gap-8 items-center">Popularity - {Math.floor(popularity)}</p>
             <p className="flex gap-8 items-center">Vote Count - {vote_count}</p>
