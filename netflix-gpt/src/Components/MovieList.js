@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { MovieCard } from "./MovieCard";
+import { useMovieDetail } from "../hooks/useMovieDetail";
 export const MovieList = ({ title, moviesData }) => {
 
     if(!moviesData)return null;
+    
    
    
   return(
@@ -13,7 +15,7 @@ export const MovieList = ({ title, moviesData }) => {
                 <div className="flex ">
                     {moviesData?.map(card => (
                     
-                        <Link   to={`/moviedetail/${card.id}`} key={card.id}> <MovieCard  poster_path={card.poster_path} /></Link> 
+                        <Link onClick={useMovieDetail}  to={`/moviedetail/${card.id}`} key={card.id}> <MovieCard  poster_path={card?.poster_path} /></Link> 
                         
                     ))}
                 </div>
