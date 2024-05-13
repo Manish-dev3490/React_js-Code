@@ -6,11 +6,14 @@ import { Movieinfo } from "./MovieInfo";
 import RecommendedMovies from "./RecommendedMovie";
 import {MovieList} from "./MovieList";
 
+
 const MovieDetailPage = () => {
     const { moviedetail, moviedetailVideo } = useSelector((store) => store?.movies)
     const RecommendedData=useSelector((store)=>store?.movies?.recommendedmovies);
     useMovieDetail();
     RecommendedMovies();
+    
+    if(!moviedetail) return null;
 
 
 

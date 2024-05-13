@@ -5,7 +5,6 @@ import { Login } from "./Login"
 import {createBrowserRouter ,RouterProvider} from "react-router-dom"
 import TvShowsPage from "./TvShows"
 import TrendingPage from "./Trending"
-import WebSeriesPage from "./WebSeries"
 import MySavedMoviesPage from "./MySavedMovies"
 import MovieDetailPage from "./MovieDetail"
 import { GPTSearchPage } from "./GPTSearchPage"
@@ -32,10 +31,7 @@ import { GPTSearchPage } from "./GPTSearchPage"
             path:"/trending",
             element:<TrendingPage/>
         },
-        {
-            path:"/webseries",
-            element:<WebSeriesPage/>
-        },
+       
         {
             path:"/mysavedmovies",
             element:<MySavedMoviesPage/>

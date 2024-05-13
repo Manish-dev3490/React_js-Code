@@ -63,10 +63,9 @@ export const Header = () => {
       {user && <div className="flex items-center gap-6 justify-between">
         <div>
           <ul className="flex items-center gap-10  mx-20  cursor-pointer ">
-            <li className=" hover:text-red-500 hover:border-b-2  border-red-600"> Tv Shows </li>
-            <li className=" hover:text-red-500 hover:border-b-2  border-red-600">Trending </li>
-            <li className=" hover:text-red-500 hover:border-b-2  border-red-600">web Series</li>
-            <li className=" hover:text-red-500 hover:border-b-2  border-red-600">My Saved Movies</li>
+          <Link to={"/tvshows"}>  <li className=" hover:text-red-500 hover:border-b-2  border-red-600"> Tv Shows </li></Link>
+           <Link to={"/trending"}><li className=" hover:text-red-500 hover:border-b-2  border-red-600">Trending </li></Link> 
+           <Link to={"/mysavedmovies"}><li className=" hover:text-red-500 hover:border-b-2  border-red-600">My Saved Movies</li></Link>
 
 
 

@@ -1,6 +1,13 @@
+import { Header } from "./Header";
+
 const TrendingPage=()=>{
     return (
-        <div>Hello Inside Trending page</div>
+        <>
+        <Header />
+        <div>
+
+        </div>
+    </>
     )
 }
 

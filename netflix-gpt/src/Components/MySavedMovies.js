@@ -1,6 +1,13 @@
-const MySavedMoviesPage=()=>{
+import { Header } from "./Header";
+import { SavedMovieList } from "./SavedMovieList";
+
+const MySavedMoviesPage = () => {
     return (
-        <div>Hello Inside My saved Movies page</div>
+        <>
+            <Header />
+            <SavedMovieList/>
+            
+        </>
     )
 }
 

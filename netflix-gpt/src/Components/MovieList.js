@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import { MovieCard } from "./MovieCard";
-import { useMovieDetail } from "../hooks/useMovieDetail";
-import { useDispatch } from "react-redux";
-import { removeMovieDetail, removeMovieDetailVideo } from "../utils/movieSlice";
+import { MovieDetails } from "../utils/FetchDetailOfMovie";
 
 export const MovieList = ({ title, moviesData }) => {
     if (!moviesData) return null;
@@ -17,7 +15,7 @@ export const MovieList = ({ title, moviesData }) => {
             <div className="flex overflow-x-scroll gap-6 mt-5 whitespace-nowrap overflow-auto scrollbar-hide ">
                 <div className="flex ">
                     {moviesData?.map(card => (
-                        <Link  to={`/moviedetail/${card.id}`} key={card.id}>
+                        <Link onClick={MovieDetails} to={`/moviedetail/${card.id}`} key={card.id}>
                             <MovieCard poster_path={card?.poster_path} />
                         </Link>
                     ))}

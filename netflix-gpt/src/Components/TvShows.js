@@ -1,10 +1,13 @@
 import { Header } from "./Header";
 
-const TvShowsPage=()=>{
+const TvShowsPage = () => {
     return (
-        <div>Hello Inside Tv Show page
-            <Header></Header>
-        </div>
+        <>
+            <Header />
+            <div>
+
+            </div>
+        </>
     )
 }
 
