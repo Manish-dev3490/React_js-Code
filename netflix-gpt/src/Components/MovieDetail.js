@@ -29,9 +29,10 @@ const MovieDetailPage = () => {
                  <div>
                  <VideoTitle title={moviedetail?.original_title} overview={moviedetail?.overview}/>
                  <Movieinfo/>
+                 {RecommendedData?
                  <div className="h-[50vh] bg-black mt-52">
-                 {RecommendedData?<MovieList title={"Recommended movies"} moviesData={RecommendedData}/>:""}
-                 </div>
+                 {<MovieList title={"Recommended movies"} moviesData={RecommendedData}/>}
+                 </div>:<h2>You Dont have any recommended movies related to this</h2>}
      
                  </div>
      
