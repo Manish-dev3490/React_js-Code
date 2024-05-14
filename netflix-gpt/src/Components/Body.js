@@ -17,6 +17,7 @@ import { GPTSearchPage } from "./GPTSearchPage"
             path:"/",
             element:<Login/>
         },
+        
         {
             path:"/browse",
             element:<Browse />,

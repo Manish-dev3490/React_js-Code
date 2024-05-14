@@ -42,16 +42,18 @@ const movieSlice = createSlice({
         addPageNumber: (state) => {
             state.pagenumber = state.pagenumber+1;
         },
-        addNewDetailvideodata:(state,action)=>{
-            state.moviedetailVideo=action.payload
+        addcategorylist:(state,action)=>{
+            state.categorylist=action.payload;
         },
-        addNewDetailData:(state,action)=>{
-            state.moviedetail=action.payload
+        addcategorywisemovies:(state,action)=>{
+            state.categorymovies=action.payload;
         }
+      
+      
 
 
 
     }
 })
 export default movieSlice.reducer;
-export const { addNowPlayingMovies, addMovieTrailor, addPopularMovies, addTopRatedMovies, addUpcomingMovies, addMovieDetail, addMovieDetailVideo, addRecommendedMovies,addPageNumber,addTrendingMovie ,addNewDetailvideodata,addNewDetailData} = movieSlice.actions;
+export const { addNowPlayingMovies, addMovieTrailor, addPopularMovies, addTopRatedMovies, addUpcomingMovies, addMovieDetail, addMovieDetailVideo, addRecommendedMovies,addPageNumber,addTrendingMovie ,addcategorylist,addcategorywisemovies} = movieSlice.actions;
