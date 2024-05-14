@@ -3,7 +3,6 @@
 import { Browse } from "./Browse"
 import { Login } from "./Login"
 import {createBrowserRouter ,RouterProvider} from "react-router-dom"
-import TvShowsPage from "./TvShows"
 import TrendingPage from "./Trending"
 import MySavedMoviesPage from "./MySavedMovies"
 import MovieDetailPage from "./MovieDetail"

@@ -66,12 +66,13 @@ export const Header = () => {
         <div>
           <ul className="flex items-center gap-10  mx-20  cursor-pointer ">
             <Link to={"/browse"}><li className=" hover:text-red-500 hover:border-b-2  border-red-600">Browse </li></Link>
+
            <Link to={"/trending"}><li className=" hover:text-red-500 hover:border-b-2  border-red-600">Trending </li></Link> 
            <Link to={"/mysavedmovies"}><li className=" hover:text-red-500 hover:border-b-2  border-red-600">My Saved Movies ({SavedMovielength.length})</li></Link>
 
 
 
-            <Link to={"/GPTSearchPage"}><button className="px-2 py-2  flex items-center  hover:border-b-2  border-red-600">Gemini Search</button></Link>
+            <Link to={"/GPTSearchPage"}><button className="  flex items-center  hover:border-b-2  border-red-600">Gemini Search</button></Link>
 
 
           </ul>
