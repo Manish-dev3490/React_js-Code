@@ -7,7 +7,7 @@
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YWEwMDc2NjNjZGJiOTJiZjRkNTBlMjcyM2QxOGQ2NCIsInN1YiI6IjY1MWZkZDRiMDcyMTY2MDBlMmQ5MjhiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dE0qZrdGz--AR_jKUYJ8ZlCl0pI96HSQyU-esvj57EI'
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YWEwMDc2NjNjZGJiOTJiZjRkNTBlMjcyM2QxOGQ2NCIsInN1YiI6IjY1MWZkZDRiMDcyMTY2MDBlMmQ5MjhiZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dE0qZrdGz--AR_jKUYJ8ZlCl0pI96HSQyU-esvj57EI',
     }
   };
   
@@ -15,5 +15,6 @@
 
   export const SUPPORTED_LANGS=[{identifier:"en",name:"English"},{identifier:"hi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}]
 
-  export const GEMINI_APIKey="AIzaSyAMKYViFdkLTSTWrNK2F-fb1niOYVZN0-Q";
   export const EMPTY_CartIMG="https://cdn3.iconfinder.com/data/icons/shopping-and-ecommerce-28/90/empty_cart-512.png";
+
+  export const GEMINI_APIKey="AIzaSyAMKYViFdkLTSTWrNK2F-fb1niOYVZN0-Q";
