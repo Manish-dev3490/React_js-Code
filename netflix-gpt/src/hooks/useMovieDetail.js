@@ -28,5 +28,5 @@ export const useMovieDetail = () => {
     useEffect(() => {
         getMovieDetail();
         getMovieVideo();
-    }, [])
+    }, [id])
 }
