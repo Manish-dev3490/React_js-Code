@@ -1,9 +1,11 @@
 import { useRef } from "react";
-import { Api_Options, GEMINI_APIKey, heroImage } from "../utils/constant"
+import { Api_Options, GEMINI_APIKey, SUPPORTED_LANGS, heroImage } from "../utils/constant"
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addGPTMoviesName, addGPTResultMovies } from "../utils/GPTSlice";
 import { MovieList } from "./MovieList";
+import { addlang } from "../utils/LanguageConfig";
+import LanguageSupport from "../utils/LanguageSupport";
 
 
 export const GPtMainContainer = () => {
@@ -11,6 +13,8 @@ export const GPtMainContainer = () => {
   const dispatch = useDispatch();
   const SearchText = useRef(null);
   const MovieGPtResult=useSelector((store)=>store?.GPTMovieResult);
+  const LangKey=useSelector((store)=>store?.LanguageToChoose?.lang);
+
   const {gptmoviesresult}=MovieGPtResult;
 
   const searchTMDBMovies = async (movie) => {
@@ -34,6 +38,9 @@ export const GPtMainContainer = () => {
     
   }
 
+  const handleLanguageChange = (e) => {
+    dispatch(addlang(e.target.value));
+  };
 
 
   return (
@@ -46,8 +53,17 @@ export const GPtMainContainer = () => {
 
 
       <form className=" w-[80%] relative top-60 flex z-50 mx-auto px-7 justify-center " onClick={(e) => e.preventDefault()}>
-        <input className=" px-4 w-[50%] h-12 rounded-md bg-black text-lg text-white" placeholder="What would you like to search today ?" type="text" ref={SearchText} />
-        <button className="ml-4 text-lg px-4  bg-white text-black rounded-lg" onClick={handleGPTSearchClick}>Search</button>
+        <input className=" px-4 w-[50%] h-12 rounded-md bg-black text-lg text-white" placeholder={LanguageSupport[LangKey].placeholder} type="text" ref={SearchText} />
+        <button className="ml-4 text-lg px-4  bg-white text-black rounded-lg" onClick={handleGPTSearchClick}>{LanguageSupport[LangKey].search}</button>
+    
+        <select className="ml-4 text-lg px-4  bg-white text-black rounded-lg" onClick={handleLanguageChange}>
+          {
+            SUPPORTED_LANGS.map((lang)=>(
+              <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
+            ))
+          }
+        </select>
+      
       </form>
 
     <div className="mt-[40%] flex flex-col bg-black gap-60">
