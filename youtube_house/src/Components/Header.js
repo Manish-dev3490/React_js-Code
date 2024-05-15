@@ -3,7 +3,7 @@ import { Hamburger_Icon, Notification_Bell_icon, Search_Icon, User_icon, Youtube
 
 export const Header = () => {
     return (
-        <div className='flex items-center justify-between px-8 '>
+        <div className='flex items-center justify-between px-8  w-screen'>
             {/* For logo and hamburger menu section */}
             <div className='flex items-center gap-2'>
                 <img alt='Hamburger-icon' src={Hamburger_Icon} className=' w-6 h-8' />

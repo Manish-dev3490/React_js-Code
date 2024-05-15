@@ -2,6 +2,8 @@ import './App.css';
 import {RouterProvider, createBrowserRouter} from "react-router-dom"
 import Login from './Components/Login';
 import Homepage from './Components/Homepage';
+import { Application_Store } from './Utils/Application_Store';
+import {Provider} from "react-redux";
 
 function App() {
 
@@ -18,9 +20,11 @@ function App() {
   ])
 
   return (
+    <Provider store={Application_Store}>
     <div className="App">
       <RouterProvider router={ApplicationRouter}/>
     </div>
+    </Provider>
   );
 }
 
