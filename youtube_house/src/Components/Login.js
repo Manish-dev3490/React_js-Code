@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleForm } from "../Utils/FormSlice";
-import { Youtube_white } from "../Utils/Constant";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
 import { useNavigate } from "react-router-dom";
@@ -12,11 +11,10 @@ import { Header } from "./Header";
 const Login = () => {
   const dispatch = useDispatch();
   const formValue = useSelector((store) => store?.form?.isSignForm);
-  const userStore=useSelector((store)=>store?.user)
-  const email = useRef();
-  const password = useRef();
-  const name = useRef();
-  const number = useRef();
+  const email = useRef(null);
+  const password = useRef(null);
+  const name = useRef(null);
+  const number = useRef(null);
   const navigate = useNavigate();
 
   const FormTogggleFunctionality = () => {
@@ -24,50 +22,52 @@ const Login = () => {
   };
 
   const handleSignedFunctionality = () => {
-    // this is for Sign Up Api
-    if (!formValue) {
-      createUserWithEmailAndPassword(auth, email.current.value, password.current.value).then((userCredential) => {
-        const user = userCredential.user
-        updateProfile(user, {
-          displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg", phoneNumber: number.current.value
-        })
-          .then(() => {
-            console.log(user);
-            const { displayName, email, phoneNumber } = auth.currentUser;
-            dispatch(addUser({ displayName: displayName, email: email, phoneNumber: phoneNumber }));
-            if(window.location.pathname==="/" && userStore){
-              navigate("/homepage");
-            }
-          })
-          .catch((error) => {
-          });
-      })
-        .catch((error) => {
 
+    if (!formValue) {
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+         
+          // update profile
+          updateProfile(user, {
+            displayName: name.current.value,
+            email:email.current.value
+          })
+            .then(() => {
+              const {email, displayName, uid,photoURL} = auth.currentUser;
+              dispatch(addUser({email:email,displayName:displayName,uid:uid,photoURL:photoURL}))
+            })
+            .catch((error) => {
+              console.log("some error in update profile");
+            });
+        })
+
+        .catch((error) => {
+          // ..
+          console.log("something is wrong in signed up");
         });
+
     }
 
-    // This is for sign in Api
     else {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          const user=userCredential.user
-          const { displayName, email, phoneNumber } = user;
-          dispatch(addUser({ displayName: displayName, email: email, phoneNumber: phoneNumber }));
-          if(window.location.pathname==="/" && userStore){
-            navigate("/homepage");
-          }
         })
         .catch((error) => {
-          console.log("something is wrorng");
+          console.log("did not found this user in our backend");
         });
     }
 
   }
   return (
-    <div className="w-screen h-[100vh] flex flex-col bg-black   items-center ">
+    <div className="w-screen h-[100vh] flex flex-col    items-center ">
       {/* <img src={Youtube_white} alt="Youtube" className=" w-64 h-20" /> */}
-      <Header/>
+      <Header />
 
       {/* Form Container */}
       <div className="w-4/12 h-auto flex flex-col  mt-[7%] py-6 bg-gray-200 rounded-md  px-4 ">
@@ -91,7 +91,7 @@ const Login = () => {
             placeholder="Enter Your Password"
             className=" h-9 px-2 rounded-md text-black text-md"
           />
-          {!formValue ? (
+          {/* {!formValue ? (
             <>
               <input
                 type="text"
@@ -108,10 +108,9 @@ const Login = () => {
             </>
           ) : (
             ""
-          )}
+          )} */}
           <button
             onClick={handleSignedFunctionality}
-            type="submit"
             className="h-9 px-2 rounded-md text-white text-md bg-black"
           >
             {formValue ? "Sign In" : "Sign up"}

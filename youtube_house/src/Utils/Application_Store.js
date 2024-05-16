@@ -4,7 +4,8 @@ import FormReducer from "./FormSlice"
 import UserReducer from "./UserSlice"
  export const Application_Store=configureStore({
     reducer:{
-        form:FormReducer,
-        user:UserReducer
+        user:UserReducer,
+        form:FormReducer
+
     }
 })

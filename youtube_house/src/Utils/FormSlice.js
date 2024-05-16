@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const FormSlice=createSlice({
-    name:"user",
+    name:"form",
     initialState:{
         isSignForm:true
     },
