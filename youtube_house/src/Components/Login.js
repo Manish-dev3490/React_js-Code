@@ -2,9 +2,10 @@ import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleForm } from "../Utils/FormSlice";
 import { Youtube_white } from "../Utils/Constant";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
 import { useNavigate } from "react-router-dom";
+import { addUser } from "../Utils/UserSlice";
 
 
 const Login = () => {
@@ -12,6 +13,8 @@ const Login = () => {
   const formValue = useSelector((store) => store?.form?.isSignForm);
   const email = useRef();
   const password = useRef();
+  const name = useRef();
+  const number = useRef();
   const navigate = useNavigate();
 
   const FormTogggleFunctionality = () => {
@@ -23,14 +26,19 @@ const Login = () => {
     if (!formValue) {
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          navigate("/homepage");
-        })
-        .catch((error) => {
+          updateProfile(auth.currentUser, {
+            displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg", phoneNumber: number.current.value
+          }).then(() => {
+              const { displayName, email, phoneNumber } = auth.currentUser;
+              dispatch(addUser({ displayName: displayName, email: email, phoneNumber: phoneNumber }));
+            }).catch((error) => {
+            });
+        }).catch((error) => {
 
         });
     }
 
-    // else is for Sign In Api
+    // This is for sign in Api
     else {
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
@@ -69,11 +77,20 @@ const Login = () => {
             className=" h-9 px-2 rounded-md text-black text-md"
           />
           {!formValue ? (
-            <input
-              type="text"
-              placeholder="Enter your Name "
-              className="h-9 px-2 rounded-md text-black text-md"
-            />
+            <>
+              <input
+                type="text"
+                placeholder="Enter your Name "
+                className="h-9 px-2 rounded-md text-black text-md"
+                ref={name}
+              />
+              <input
+                type="number"
+                ref={number}
+                placeholder="Enter Your Number"
+                className=" h-9 px-2 rounded-md text-black text-md"
+              />
+            </>
           ) : (
             ""
           )}
