@@ -2,14 +2,20 @@ import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleForm } from "../Utils/FormSlice";
 import { Header } from "./Header";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "../Utils/Firebase";
-
-
+import { useNavigate } from "react-router-dom";
+import { addUser } from "../Utils/UserSlice";
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const formValue = useSelector((store) => store?.form?.isSignForm);
+  const UserPresent= useSelector((store) => store?.user);
+
   const email = useRef(null);
   const password = useRef(null);
 
@@ -17,42 +23,47 @@ const Login = () => {
     dispatch(toggleForm());
   };
 
-
   const handleSignFuncationality = () => {
-
     // this is for sign up logic
     if (!formValue) {
-      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
-
-          // Signed up 
+          // Signed up
           const user = userCredential.user;
-          console.log(user);
-
+          dispatch(addUser(user.email));
+          if (window.location.pathname === "/" && UserPresent) {
+            navigate("/homepage");
+          }
           // Now update user with name and photo or anything that you want
-
-
-
         })
         .catch((error) => {
           console.log("something error in signed up" + error);
         });
     }
-
-
     // this is for sign in logic
     else {
-      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
-          // Signed in 
+          // Signed in
           const user = userCredential.user;
-          console.log(user);
+          dispatch(addUser(user.email));
+          if (window.location.pathname === "/" && UserPresent) {
+            navigate("/homepage");
+          }
         })
         .catch((error) => {
           console.log("something error in sign in functionality " + error);
         });
     }
-  }
+  };
 
   return (
     <div className="w-screen h-[100vh] flex flex-col    items-center ">
@@ -100,7 +111,6 @@ const Login = () => {
           <button
             className="h-9 px-2 rounded-md text-white text-md bg-black"
             onClick={handleSignFuncationality}
-
           >
             {formValue ? "Sign In" : "Sign up"}
           </button>
@@ -116,7 +126,6 @@ const Login = () => {
       </div>
     </div>
   );
-
-}
+};
 
 export default Login;

@@ -2,8 +2,15 @@ import React from 'react'
 import {useSelector} from "react-redux";
 import { Hamburger_Icon, Notification_Bell_icon, Search_Icon, User_icon, Youtube_Logo } from '../Utils/Constant'
 
+
 export const Header = () => {
-    const user=useSelector((store)=>store?.user)
+    const user=useSelector((store)=>store?.user);
+
+
+    
+
+   
+
     return (
         <div className='flex items-center justify-between px-8  w-screen'>
             {/* For logo and hamburger menu section */}
@@ -23,6 +30,7 @@ export const Header = () => {
             {user&&<div className='flex gap-2'>
                 <img alt='Bell-Icon' src={Notification_Bell_icon} className=' w-8' />
                 <img alt='user-icon' src={User_icon} className=' w-8' />
+                <button className='bg-red-500 text-black px-3 rounded-md cursor-pointer font-normal'>Sign Out</button>
             </div>
             }
             
