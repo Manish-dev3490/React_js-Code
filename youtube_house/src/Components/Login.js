@@ -5,16 +5,22 @@ import { Header } from "./Header";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
+import { addUser } from "../Utils/UserSlice";
 
 
 const Login = () => {
   const dispatch = useDispatch();
   const formValue = useSelector((store) => store?.form?.isSignForm);
-
   const email = useRef(null);
   const password = useRef(null);
+  const name = useRef(null);
+  const number = useRef(null);
+
+
+
 
   const FormTogggleFunctionality = () => {
     dispatch(toggleForm());
@@ -33,6 +39,17 @@ const Login = () => {
           const user = userCredential.user;
           
           // Now update user with name and photo or anything that you want
+          updateProfile(user, {
+            displayName: name.current.value,
+            email:email.current.value,
+            phoneNumber:number.current.value
+          }).then(() => {
+            const {displayName,email,phoneNumber}=user;
+            dispatch(addUser({displayName:displayName,email:email,phoneNumber:phoneNumber}));
+            
+          }).catch((error) => {
+            console.log("something wrong in updating user profile");
+          });
         })
         .catch((error) => {
           console.log("something error in signed up" + error);
@@ -79,7 +96,7 @@ const Login = () => {
             placeholder="Enter Your Password"
             className=" h-9 px-2 rounded-md text-black text-md"
           />
-          {/* {!formValue ? (
+          {!formValue ? (
             <>
               <input
                 type="text"
@@ -96,7 +113,7 @@ const Login = () => {
             </>
           ) : (
             ""
-          )} */}
+          )} 
           <button
             className="h-9 px-2 rounded-md text-white text-md bg-black"
             onClick={handleSignFuncationality}

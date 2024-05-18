@@ -18,8 +18,8 @@ export const Header = () => {
 
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                const { email, uid } = user
-                dispatch(addUser({ email: email, uid: uid }));
+                const { email, uid ,displayName,phoneNumber} = user
+                dispatch(addUser({ email: email, uid:uid,displayName:displayName,phoneNumber}));
                 if (window.location.pathname === "/") {
                     navigate("/homepage");
                 }
