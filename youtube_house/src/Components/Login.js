@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleForm } from "../Utils/FormSlice";
 import { Header } from "./Header";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Utils/Firebase";
+
 
 
 const Login = () => {
@@ -10,20 +13,50 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
 
- 
-
- 
-
-
   const FormTogggleFunctionality = () => {
     dispatch(toggleForm());
   };
 
+
+  const handleSignFuncationality = () => {
+
+    // this is for sign up logic
+    if (!formValue) {
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+
+          // Signed up 
+          const user = userCredential.user;
+          console.log(user);
+
+          // Now update user with name and photo or anything that you want
+
+
+
+        })
+        .catch((error) => {
+          console.log("something error in signed up" + error);
+        });
+    }
+
+
+    // this is for sign in logic
+    else {
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          console.log("something error in sign in functionality " + error);
+        });
+    }
+  }
+
   return (
     <div className="w-screen h-[100vh] flex flex-col    items-center ">
-      {/* <img src={Youtube_white} alt="Youtube" className=" w-64 h-20" /> */}
       <Header />
-
       {/* Form Container */}
       <div className="w-4/12 h-auto flex flex-col  mt-[7%] py-6 bg-gray-200 rounded-md  px-4 ">
         <form
@@ -66,7 +99,8 @@ const Login = () => {
           )} */}
           <button
             className="h-9 px-2 rounded-md text-white text-md bg-black"
-            
+            onClick={handleSignFuncationality}
+
           >
             {formValue ? "Sign In" : "Sign up"}
           </button>
