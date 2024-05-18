@@ -7,14 +7,11 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
-import { useNavigate } from "react-router-dom";
-import { addUser } from "../Utils/UserSlice";
+
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const formValue = useSelector((store) => store?.form?.isSignForm);
-  const UserPresent= useSelector((store) => store?.user);
 
   const email = useRef(null);
   const password = useRef(null);
@@ -34,10 +31,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          dispatch(addUser(user.email));
-          if (window.location.pathname === "/" && UserPresent) {
-            navigate("/homepage");
-          }
+          
           // Now update user with name and photo or anything that you want
         })
         .catch((error) => {
@@ -53,11 +47,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          dispatch(addUser(user.email));
-          if (window.location.pathname === "/" && UserPresent) {
-            navigate("/homepage");
-          }
         })
         .catch((error) => {
           console.log("something error in sign in functionality " + error);
