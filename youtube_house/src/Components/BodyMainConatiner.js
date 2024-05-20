@@ -2,7 +2,7 @@ import React from 'react'
 
 const BodyMainContainer = () => {
   return (
-    <div>BodyMainContainer</div>
+    <div className=' pl-72'>BodyMainContainer</div>
   )
 }
 

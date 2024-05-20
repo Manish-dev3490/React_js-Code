@@ -43,7 +43,7 @@ export const Header = () => {
     }
 
     return (
-        <div className='flex items-center justify-between px-8  w-screen'>
+        <div className='flex items-center justify-between px-8  w-screen fixed'>
             {/* For logo and hamburger menu section */}
             <div className='flex items-center gap-2'>
                 {user && <img alt='Hamburger-icon' src={Hamburger_Icon} className=' w-6 h-8' />}
