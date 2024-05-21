@@ -43,7 +43,7 @@ export const Header = () => {
     }
 
     return (
-        <div className='flex items-center justify-between px-8  w-screen fixed'>
+        <div className='flex items-center justify-between px-8  w-screen fixed  bg-gray-200'>
             {/* For logo and hamburger menu section */}
             <div className='flex items-center gap-2'>
                 {user && <img alt='Hamburger-icon' src={Hamburger_Icon} className=' w-6 h-8' />}
@@ -52,8 +52,8 @@ export const Header = () => {
 
             {/* for input and search section */}
             {user && <div className='flex'>
-                <input type='text' placeholder='Search your video' className=' bg-gray-100 pl-4 py-2 rounded-l-full  w-96' />
-                <button className=' w-12 px-2 rounded-r-full bg-gray-300'><img alt='srch-icon' src={Search_Icon} className='' /></button>
+                <input type='text' placeholder='Search your video' className=' bg-black pl-4 py-2 rounded-l-full  w-96' />
+                <button className=' w-12 px-2 rounded-r-full bg-white text-black'><img alt='srch-icon' src={Search_Icon} className='' /></button>
             </div>}
 
 

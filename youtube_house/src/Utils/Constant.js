@@ -10,3 +10,6 @@ export const Watch_Later="https://cdn.icon-icons.com/icons2/1863/PNG/512/watch-l
 export const Trenidng_Icon="https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Trending-512.png";
 export const Movies_icon="https://webstockreview.net/images/cinema-clipart-cinema-screen-4.png";
 export const Gaming_Icon="https://www.kindpng.com/picc/m/19-191345_game-controller-pad-videogame-video-game-icon-png.png";
+const Google_Api="AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk";
+export const YouTube_Api_MostPopular="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=50&chart=mostPopular&key="+Google_Api;
+ export const buttonList = ["Gaming", "Music", "Movies", "Comedy", "Horror movies", "Vlogs", "Namastey Javascript", "Chai aur Code", "DSA", "Development", "Devops"];

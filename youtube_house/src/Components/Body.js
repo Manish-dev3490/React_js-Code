@@ -8,7 +8,7 @@ const Body = () => {
 
 
     return (
-        <div className='flex gap-72 py-20 relative '>
+        <div className='flex py-20 relative '>
             <Sidebar/>
             <BodyMainContainer/>
         </div>

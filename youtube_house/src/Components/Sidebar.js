@@ -37,7 +37,7 @@ const Sidebar = () => {
 
       </ul>
 
-      <ul className='flex flex-col  px-4 gap-4  justify-center text-black py-4  border-b-[1px] border-black'>
+      <ul className='flex flex-col  px-4 gap-4  justify-center text-black py-2 border-b-[1px] border-black'>
         <li className='flex gap-5  font-medium text-md'><span><i className="ri-settings-2-fill"></i></span>Setting</li>
         <li className='flex gap-5  font-medium text-md'><span><i className="ri-folder-history-fill"></i></span>History</li>
         <li className='flex gap-5  font-medium text-md'><span><i className="ri-feedback-fill"></i></span>Feedback</li>
