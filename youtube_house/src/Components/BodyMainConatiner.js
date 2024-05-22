@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 
 const BodyMainContainer = () => {
   const PopularVideos = useSelector((store) => store?.Videos?.popularVideos);
-  console.log(PopularVideos);
   useGetPopularVidoes()
  
 
@@ -19,7 +18,7 @@ const BodyMainContainer = () => {
 
       {/* This is for list of most popular videos */}
       <div className='flex flex-wrap mt-4 px-3 gap-10'>
-        {PopularVideos&&PopularVideos.map((Video)=><VideoCard data={Video}/>)}
+        {PopularVideos&&PopularVideos.map((Video)=><VideoCard key={Video.id} data={Video}/>)}
       </div>
 
     </div>

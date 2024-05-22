@@ -1,9 +1,11 @@
 import React from 'react'
 import 'remixicon/fonts/remixicon.css'
-import { Channel_Icon, Movies_icon, PlayList_Icon, Trenidng_Icon, Watch_Later } from '../Utils/Constant'
+import { Channel_Icon, PlayList_Icon, Trenidng_Icon, Watch_Later } from '../Utils/Constant'
+import {useSelector} from "react-redux";
 
 const Sidebar = () => {
-  return (
+  const formValue=useSelector((store)=>store?.form?.isSignForm);
+  return formValue&&(
     <div className=' overflow-y-scroll  fixed h-[100vh] w-52  cursor-pointer'>
       {/* first unordered list */}
       <ul className='flex flex-col  px-4 gap-4  justify-center text-black py-4  border-b-[1px] border-black'>

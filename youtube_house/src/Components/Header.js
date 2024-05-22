@@ -6,10 +6,12 @@ import { auth } from '../Utils/Firebase';
 import { addUser, removeUser } from '../Utils/UserSlice';
 import { useNavigate } from "react-router-dom"
 import { signOut } from "firebase/auth";
+import { toggleForm } from '../Utils/FormSlice';
 
 
 
 export const Header = () => {
+    const formValue=useSelector((store)=>store?.form?.isSignForm);
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const user = useSelector((store) => store?.user);
@@ -42,11 +44,16 @@ export const Header = () => {
         });
     }
 
+    const handleSidebar=()=>{
+        dispatch(toggleForm())
+        console.log(formValue);
+    }
+
     return (
         <div className='flex items-center justify-between px-8  w-screen fixed  bg-gray-200'>
             {/* For logo and hamburger menu section */}
             <div className='flex items-center gap-2'>
-                {user && <img alt='Hamburger-icon' src={Hamburger_Icon} className=' w-6 h-8' />}
+                {user && <img alt='Hamburger-icon' src={Hamburger_Icon} onClick={handleSidebar} className=' w-6 h-8' />}
                 <img alt='Youtube-icon' src={Youtube_Logo} className=' w-36' />
             </div>
 
