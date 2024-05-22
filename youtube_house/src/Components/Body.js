@@ -8,7 +8,7 @@ const Body = () => {
 
 
     return (
-        <div className='flex py-20 relative '>
+        <div className='flex py-24 relative '>
             <Sidebar/>
             <BodyMainContainer/>
         </div>

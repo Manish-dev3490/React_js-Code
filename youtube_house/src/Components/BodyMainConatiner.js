@@ -6,11 +6,12 @@ import { useSelector } from 'react-redux';
 
 const BodyMainContainer = () => {
   const PopularVideos = useSelector((store) => store?.Videos?.popularVideos);
+  const formValue=useSelector((store)=>store?.form?.isSignForm);
   useGetPopularVidoes()
  
 
   return (
-    <div className='pl-60 -z-10 mt-5'>
+    <div className={formValue?"pl-60 ":" pl-8 " }>
       {/* This is for button list */}
       <div>
         {buttonList.map((button, index) => <button className='bg-gray-200  ml-3 px-3 py-1 rounded-md' key={index}>{button}</button>)}

@@ -12,4 +12,5 @@ export const Movies_icon="https://webstockreview.net/images/cinema-clipart-cinem
 export const Gaming_Icon="https://www.kindpng.com/picc/m/19-191345_game-controller-pad-videogame-video-game-icon-png.png";
 const Google_Api="AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk";
 export const YouTube_Api_MostPopular="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=50&regionCode=In&chart=mostPopular&key="+Google_Api;
- export const buttonList = ["Gaming", "Music", "Movies", "Comedy", "Horror movies", "Vlogs", "Namastey Javascript", "Chai aur Code", "DSA", "Development", "Devops"];
+ export const buttonList = ["Gaming", "Music", "Movies", "Comedy", "Horror movies", "Namastey Javascript", "Chai aur Code", "DSA", "Development", "Devops"];
+ export const Close_menu="https://icon-library.com/images/menu-icon-png-3-lines/menu-icon-png-3-lines-15.jpg";

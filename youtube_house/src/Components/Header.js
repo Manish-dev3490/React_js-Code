@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { Hamburger_Icon, Notification_Bell_icon, Search_Icon, User_icon, Youtube_Logo } from '../Utils/Constant'
+import { Close_menu, Hamburger_Icon, Notification_Bell_icon, Search_Icon, User_icon, Youtube_Logo } from '../Utils/Constant'
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../Utils/Firebase';
 import { addUser, removeUser } from '../Utils/UserSlice';
@@ -50,16 +50,16 @@ export const Header = () => {
     }
 
     return (
-        <div className='flex items-center justify-between px-8  w-screen fixed  bg-gray-200'>
+        <div className='flex items-center justify-between px-8  w-screen  fixed z-30  bg-gray-200'>
             {/* For logo and hamburger menu section */}
             <div className='flex items-center gap-2'>
-                {user && <img alt='Hamburger-icon' src={Hamburger_Icon} onClick={handleSidebar} className=' w-6 h-8' />}
+                {user && <img alt='Hamburger-icon' src={formValue?Hamburger_Icon:Close_menu} onClick={handleSidebar} className=' w-6 h-8 cursor-pointer' />}
                 <img alt='Youtube-icon' src={Youtube_Logo} className=' w-36' />
             </div>
 
             {/* for input and search section */}
             {user && <div className='flex'>
-                <input type='text' placeholder='Search your video' className=' bg-black pl-4 py-2 rounded-l-full  w-96' />
+                <input type='text' placeholder='Search your video' className=' text-white bg-black pl-4 py-2 rounded-l-full  w-96' />
                 <button className=' w-12 px-2 rounded-r-full bg-white text-black'><img alt='srch-icon' src={Search_Icon} className='' /></button>
             </div>}
 
