@@ -15,7 +15,7 @@ const BodyMainContainer = () => {
     <div className={formValue?"pl-60 ":" pl-8 " }>
       {/* This is for button list */}
       <div>
-        {buttonList.map((button, index) => <button className='bg-gray-200  ml-3 px-3 py-1 rounded-md' key={index}>{button}</button>)}
+        {buttonList.map((button, index) => <button className='bg-gray-200  ml-2 px-4 py-1 rounded-md' key={index}>{button}</button>)}
       </div>
 
       {/* This is for list of most popular videos */}

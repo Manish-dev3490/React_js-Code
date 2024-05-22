@@ -7,7 +7,7 @@ import { addUser, removeUser } from '../Utils/UserSlice';
 import { useNavigate } from "react-router-dom"
 import { signOut } from "firebase/auth";
 import { toggleForm } from '../Utils/FormSlice';
-
+import {Link} from "react-router-dom"
 
 
 export const Header = () => {
@@ -54,7 +54,7 @@ export const Header = () => {
             {/* For logo and hamburger menu section */}
             <div className='flex items-center gap-2'>
                 {user && <img alt='Hamburger-icon' src={formValue?Hamburger_Icon:Close_menu} onClick={handleSidebar} className=' w-6 h-8 cursor-pointer' />}
-                <img alt='Youtube-icon' src={Youtube_Logo} className=' w-36' />
+                <Link to={"/homepage"}><img alt='Youtube-icon' src={Youtube_Logo} className=' w-36' /></Link>
             </div>
 
             {/* for input and search section */}
