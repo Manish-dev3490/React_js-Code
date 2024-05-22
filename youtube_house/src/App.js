@@ -4,6 +4,7 @@ import Login from './Components/Login';
 import Homepage from './Components/Homepage';
 import { Application_Store } from './Utils/Application_Store';
 import {Provider} from "react-redux";
+import { WatchPage } from './Components/WatchPage';
 
 function App() {
 
@@ -16,6 +17,10 @@ function App() {
       path:"/homepage",
       element:<Homepage/>
     },
+    {
+      path:"/watch",
+      element:<WatchPage/>
+    }
 
   ])
 
