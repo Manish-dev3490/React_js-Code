@@ -46,7 +46,6 @@ export const Header = () => {
 
     const handleSidebar=()=>{
         dispatch(toggleForm())
-        console.log(formValue);
     }
 
     return (

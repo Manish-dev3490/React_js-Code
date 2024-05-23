@@ -3,7 +3,8 @@ const VideoSlice=createSlice({
 name:"videos",
 initialState :{
     popularVideos:null,
-    videoId:""
+    videoId:"",
+    movieDetails:""
 },
 reducers:{
     addPopularMovies:(state,action)=>{
@@ -11,9 +12,12 @@ reducers:{
     },
     addVideoId:(state,action)=>{
         state.videoId=action.payload;
+    },
+    addmovieDetails:(state,action)=>{
+        state.movieDetails=action.payload;
     }
 }
 })
 
 export default VideoSlice.reducer;
-export const {addPopularMovies,addVideoId}=VideoSlice.actions
+export const {addPopularMovies,addVideoId,addmovieDetails}=VideoSlice.actions

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Youtube_Movie_detail } from '../Utils/Constant'
 import { useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addVideoId } from '../Utils/Videosdata';
+import { addVideoId, addmovieDetails } from '../Utils/Videosdata';
 
 const useMovieDetail = () => {
     const [searchParams]=useSearchParams();
@@ -13,6 +13,7 @@ const useMovieDetail = () => {
     const getMovieDetail=async()=>{
         const data= await fetch(Youtube_Movie_detail+params);
         const json= await data.json()
+        dispatch(addmovieDetails(json.items))
     }
 
     useEffect(()=>{
