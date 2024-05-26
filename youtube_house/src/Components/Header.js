@@ -52,7 +52,7 @@ export const Header = () => {
         <div className='flex items-center justify-between px-8  w-screen  fixed z-30  bg-gray-200'>
             {/* For logo and hamburger menu section */}
             <div className='flex items-center gap-2'>
-                {user && <img alt='Hamburger-icon' src={formValue?Hamburger_Icon:Close_menu} onClick={handleSidebar} className=' w-6 h-8 cursor-pointer' />}
+                {user && <img alt='Hamburger-icon' src={Hamburger_Icon} onClick={handleSidebar} className=' w-6 h-8 cursor-pointer' />}
                 <Link to={"/homepage"}><img alt='Youtube-icon' src={Youtube_Logo} className=' w-36' /></Link>
             </div>
 

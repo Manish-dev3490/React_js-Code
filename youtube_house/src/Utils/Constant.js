@@ -15,3 +15,5 @@ export const YouTube_Api_MostPopular="https://youtube.googleapis.com/youtube/v3/
 export const Youtube_Movie_detail="https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&key="+Google_Api+"&id="
  export const buttonList = ["Gaming", "Music", "Movies", "Comedy", "Horror movies", "Namastey Javascript", "Chai aur Code", "DSA", "Development", "Devops"];
  export const Close_menu="https://icon-library.com/images/menu-icon-png-3-lines/menu-icon-png-3-lines-15.jpg";
+ export  const YoutubeSearchDataApi="https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&key=AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk&maxResults=50&q=Karunesh Talwar&videoCategoryId=23";
+ export const searchVideoById="https://www.googleapis.com/youtube/v3/videos?part=snippet&id=gddm8FRcxgI&key=AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk"

@@ -5,8 +5,8 @@ import {useSelector} from "react-redux";
 
 const Sidebar = () => {
   const formValue=useSelector((store)=>store?.form?.isSignForm);
-  return formValue&&(
-    <div className={formValue? "overflow-y-scroll    fixed h-[100vh] w-52  cursor-pointer":"w-10 cursor-pointer fixed h-[100vh] "}>
+  return formValue?(
+    <div className={formValue? "overflow-y-scroll z-40 bg-white fixed h-[100vh] w-52  cursor-pointer":" bg-white w-10 z-40 cursor-pointer fixed h-[100vh] "}>
       {/* first unordered list */}
       <ul className='flex flex-col  px-4 gap-4  justify-center text-black py-4  border-b-[1px] border-black'>
         <li className='flex gap-5  font-medium text-md'><span><i className="ri-home-4-fill"></i></span>Home</li>
@@ -45,7 +45,7 @@ const Sidebar = () => {
         <li className='flex gap-5  font-medium text-md'><span><i className="ri-feedback-fill"></i></span>Feedback</li>
       </ul>
       </div>
-  )
+  ):""
 }
 
 export default Sidebar

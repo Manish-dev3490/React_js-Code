@@ -2,14 +2,14 @@ import React from "react";
 import { Header } from "./Header";
 import Sidebar from "./Sidebar";
 import useMovieDetail from "../Hooks/useMovieDetail";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const WatchPage = () => {
   const getMovieId = useSelector((store) => store?.Videos?.videoId);
   const getMovieDetails = useSelector((store) => store?.Videos?.movieDetails);
   const moviedata = useSelector((store) => store?.Videos);
 
-  console.log(getMovieDetails);
+
   useMovieDetail();
 
   return (
@@ -18,9 +18,9 @@ export const WatchPage = () => {
         <Header />
         <div className=" py-24 flex ">
           <Sidebar />
-          <div className=" pl-60 flex flex-col text-white  gap-2">
+          <div className=" pl-8 flex flex-col text-white  gap-2">
             <iframe
-              width="800"
+              width="1000"
               height="600"
               className="rounded-lg"
               src={`https://www.youtube.com/embed/${
@@ -46,7 +46,7 @@ export const WatchPage = () => {
 
             </div>
 
-            <div className=" px-3 py-3 bg-black bg-opacity-80  w-[800px]  h-auto rounded-md">
+            <div className=" py-2 text-black  w-[800px]  h-auto rounded-md">
               <p>{getMovieDetails[0]?.statistics?.viewCount}K Views </p>
               <p className="">{getMovieDetails[0]?.snippet?.description}</p>
               </div>

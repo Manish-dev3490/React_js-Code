@@ -8,9 +8,12 @@ const FormSlice=createSlice({
     reducers:{
         toggleForm:(state)=>{
             state.isSignForm=!state.isSignForm
+        },
+        removeForm:(state)=>{
+            state.isSignForm=false
         }
     }
 })
 
 export default FormSlice.reducer;
-export const {toggleForm}=FormSlice.actions;
+export const {toggleForm,removeForm}=FormSlice.actions;
