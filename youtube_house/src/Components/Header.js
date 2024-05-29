@@ -15,6 +15,7 @@ import 'remixicon/fonts/remixicon.css'
 export const Header = () => {
     const dispatch = useDispatch()
     const [inputText,SetInputText]=useState("");
+    const [suggestions,setSuggestion]=useState([]);
     const navigate = useNavigate()
     const user = useSelector((store) => store?.user);
 
@@ -63,6 +64,7 @@ export const Header = () => {
         console.log("Api Call" + inputText);
         const data= await fetch(YOUTUBE_SEARCH_API+inputText);
         const json=await data.json();
+        setSuggestion(json[1])
     }
 
     return (
@@ -79,14 +81,10 @@ export const Header = () => {
                 <input value={inputText} onChange={(e)=>SetInputText(e.target.value)} type='text' placeholder='Search your video' className=' text-white bg-black pl-4 py-2 rounded-l-full  w-96' />
                 <button className=' w-12 px-2 rounded-r-full bg-white text-black'><img alt='srch-icon' src={Search_Icon} /></button>
             </div>
-            <div className=' w-[432px] py-3 px-2 bg-white rounded-md text-black  h-auto absolute z-50  top-20 '>
+            <div className=' w-[432px] py-5 px-2 bg-white rounded-md text-black  h-auto absolute z-50  top-20 '>
             <ul className=' text-md  font-medium'>
-                <li className='shadow-sm hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i> I phone </li>
-                <li className='shadow-sm hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i> I phone </li>
-                <li className='shadow-sm hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i> I phone </li>
-                <li className='shadow-sm hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i> I phone </li>
-
-                
+                {suggestions.map((s)=><li key={s} className='shadow-sm mt-2 hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i>{s}</li>)}
+        
             </ul>
             </div>
 
