@@ -9,8 +9,8 @@ const VideoCard = ({data}) => {
     }
     
     return (
-        data && <div onClick={removeSidebar} className=' w-48 shadow-lg   rounded-md  h-auto px-2 py-2 cursor-pointer'>
-            <img src={data?.snippet?.thumbnails?.medium?.url} className='rounded-md' alt="Video-card" />
+        data && <div onClick={removeSidebar} className=' w-60 shadow-lg   rounded-md  h-auto px-2 py-4 cursor-pointer'>
+            <img src={data?.snippet?.thumbnails?.medium?.url} className='rounded-md w-60' alt="Video-card" />
             <p className='font-medium truncate mt-2'>{data?.snippet?.title}</p>
             <span className='flex gap-4 text-sm truncate mt-2'>{data?.statistics?.viewCount} views<span>{data?.snippet?.channelTitle
             }</span></span>

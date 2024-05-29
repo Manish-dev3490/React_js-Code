@@ -17,3 +17,5 @@ export const Youtube_Movie_detail="https://www.googleapis.com/youtube/v3/videos?
  export const Close_menu="https://icon-library.com/images/menu-icon-png-3-lines/menu-icon-png-3-lines-15.jpg";
  export  const YoutubeSearchDataApi="https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&key=AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk&maxResults=50&q=Karunesh Talwar&videoCategoryId=23";
  export const searchVideoById="https://www.googleapis.com/youtube/v3/videos?part=snippet&id=gddm8FRcxgI&key=AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk"
+ export const YOUTUBE_SEARCH_API =
+  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";

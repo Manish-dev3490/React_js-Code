@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { Close_menu, Hamburger_Icon, Notification_Bell_icon, Search_Icon, User_icon, Youtube_Logo } from '../Utils/Constant'
+import { Hamburger_Icon, Notification_Bell_icon, Search_Icon, User_icon, YOUTUBE_SEARCH_API, Youtube_Logo } from '../Utils/Constant'
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../Utils/Firebase';
 import { addUser, removeUser } from '../Utils/UserSlice';
@@ -11,8 +11,8 @@ import {Link} from "react-router-dom"
 
 
 export const Header = () => {
-    const formValue=useSelector((store)=>store?.form?.isSignForm);
     const dispatch = useDispatch()
+    const [inputText,SetInputText]=useState("");
     const navigate = useNavigate()
     const user = useSelector((store) => store?.user);
 
@@ -38,6 +38,15 @@ export const Header = () => {
         return () => unsubscribe()
     }, [])
 
+    useEffect(()=>{
+       const timer=setTimeout(()=>{
+        getSuggestions();
+       },3000) 
+       return (()=>{
+        clearTimeout(timer)
+       })
+    },[inputText])
+
     const handleSignOut = () => {
         signOut(auth).then(() => {
         }).catch((error) => {
@@ -46,6 +55,12 @@ export const Header = () => {
 
     const handleSidebar=()=>{
         dispatch(toggleForm())
+    }
+
+    const getSuggestions=async()=>{
+        console.log("Api Call" + inputText);
+        const data= await fetch(YOUTUBE_SEARCH_API+inputText);
+        const json=await data.json();
     }
 
     return (
@@ -58,9 +73,10 @@ export const Header = () => {
 
             {/* for input and search section */}
             {user && <div className='flex'>
-                <input type='text' placeholder='Search your video' className=' text-white bg-black pl-4 py-2 rounded-l-full  w-96' />
+                <input value={inputText} onChange={(e)=>SetInputText(e.target.value)} type='text' placeholder='Search your video' className=' text-white bg-black pl-4 py-2 rounded-l-full  w-96' />
                 <button className=' w-12 px-2 rounded-r-full bg-white text-black'><img alt='srch-icon' src={Search_Icon} className='' /></button>
-            </div>}
+            </div>
+            }
 
 
             {/* for  user icons section*/}
