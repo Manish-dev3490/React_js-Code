@@ -9,15 +9,16 @@ import { signOut } from "firebase/auth";
 import { toggleForm } from '../Utils/FormSlice';
 import {Link} from "react-router-dom"
 import 'remixicon/fonts/remixicon.css'
+import { addSuggestion } from '../Utils/suggestion';
 
 
 
 export const Header = () => {
     const dispatch = useDispatch()
     const [inputText,SetInputText]=useState("");
-    const [suggestions,setSuggestion]=useState([]);
     const navigate = useNavigate()
     const user = useSelector((store) => store?.user);
+    const suggestion=useSelector((store)=>store?.suggestions?.suggestion)
 
     useEffect(() => {
 
@@ -64,7 +65,7 @@ export const Header = () => {
         console.log("Api Call" + inputText);
         const data= await fetch(YOUTUBE_SEARCH_API+inputText);
         const json=await data.json();
-        setSuggestion(json[1])
+        dispatch(addSuggestion(json[1]))
     }
 
     return (
@@ -81,14 +82,15 @@ export const Header = () => {
                 <input value={inputText} onChange={(e)=>SetInputText(e.target.value)} type='text' placeholder='Search your video' className=' text-white bg-black pl-4 py-2 rounded-l-full  w-96' />
                 <button className=' w-12 px-2 rounded-r-full bg-white text-black'><img alt='srch-icon' src={Search_Icon} /></button>
             </div>
-            <div className=' w-[432px] py-5 px-2 bg-white rounded-md text-black  h-auto absolute z-50  top-20 '>
+            
+            {suggestion?<div className=' w-[432px]  px-2 bg-white rounded-md text-black  h-auto absolute z-50  top-20  '>
             <ul className=' text-md  font-medium'>
-                {suggestions.map((s)=><li key={s} className='shadow-sm mt-2 hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i>{s}</li>)}
+                {suggestion.map((s)=><li key={s} className='shadow-sm mt-2 hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i>{s}</li>)}
         
             </ul>
-            </div>
+            </div>:""}
 
-            </div> 
+            </div>
             }
 
 
