@@ -3,6 +3,7 @@ import { Header } from "./Header";
 import Sidebar from "./Sidebar";
 import useMovieDetail from "../Hooks/useMovieDetail";
 import { useDispatch, useSelector } from "react-redux";
+import Comments from "./Comments";
 
 export const WatchPage = () => {
   const getMovieId = useSelector((store) => store?.Videos?.videoId);
@@ -14,7 +15,7 @@ export const WatchPage = () => {
 
   return (
     moviedata && (
-      <div>
+      <div >
         <Header />
         <div className=" py-24 flex ">
           <Sidebar />
@@ -51,7 +52,11 @@ export const WatchPage = () => {
               <p className="">{getMovieDetails[0]?.snippet?.description}</p>
               </div>
           </div>
+
+          {/* comments */}
         </div>
+        <Comments/>
+
       </div>
     )
   );

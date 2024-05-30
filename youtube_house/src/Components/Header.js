@@ -62,7 +62,6 @@ export const Header = () => {
     }
 
     const getSuggestions=async()=>{
-        console.log("Api Call" + inputText);
         const data= await fetch(YOUTUBE_SEARCH_API+inputText);
         const json=await data.json();
         dispatch(addSuggestion(json[1]))

@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit"
 const suggestionSlice=createSlice({
 name:"suggestions",
 initialState :{
-    suggestion:null,
+    suggestion:"",
 },
 reducers:{
     addSuggestion:(state,action)=>{

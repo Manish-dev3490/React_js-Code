@@ -19,3 +19,4 @@ export const Youtube_Movie_detail="https://www.googleapis.com/youtube/v3/videos?
  export const searchVideoById="https://www.googleapis.com/youtube/v3/videos?part=snippet&id=gddm8FRcxgI&key=AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk"
  export const YOUTUBE_SEARCH_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  export const GetComments="https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&maxResults=50&key=AIzaSyC5icnipgE2HjKlRqrsq_4WriwbUDXT8Lk&videoId="

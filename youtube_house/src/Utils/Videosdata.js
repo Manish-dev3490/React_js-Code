@@ -4,7 +4,8 @@ name:"videos",
 initialState :{
     popularVideos:null,
     videoId:"",
-    movieDetails:""
+    movieDetails:"",
+    comments:""
 },
 reducers:{
     addPopularMovies:(state,action)=>{
@@ -15,9 +16,12 @@ reducers:{
     },
     addmovieDetails:(state,action)=>{
         state.movieDetails=action.payload;
+    },
+    addComments:(state,action)=>{
+        state.comments=action.payload
     }
 }
 })
 
 export default VideoSlice.reducer;
-export const {addPopularMovies,addVideoId,addmovieDetails}=VideoSlice.actions
+export const {addPopularMovies,addVideoId,addmovieDetails,addComments}=VideoSlice.actions
