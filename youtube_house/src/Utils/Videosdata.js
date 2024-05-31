@@ -5,7 +5,10 @@ initialState :{
     popularVideos:null,
     videoId:"",
     movieDetails:"",
-    comments:""
+    comments:"",
+    searchedData:"",
+    inputText:"",
+    queryData:""
 },
 reducers:{
     addPopularMovies:(state,action)=>{
@@ -19,9 +22,16 @@ reducers:{
     },
     addComments:(state,action)=>{
         state.comments=action.payload
-    }
+    },
+    addSearchedData:(state,action)=>{
+        state.searchedData=action.payload
+    },
+    addInputText:(state,action)=>{
+        state.inputText=action.payload
+    },
+    
 }
 })
 
 export default VideoSlice.reducer;
-export const {addPopularMovies,addVideoId,addmovieDetails,addComments}=VideoSlice.actions
+export const {addPopularMovies,addVideoId,addmovieDetails,addComments,addSearchedData,addInputText}=VideoSlice.actions
