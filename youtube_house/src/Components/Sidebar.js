@@ -15,7 +15,9 @@ const Sidebar = () => {
       </ul>
 
       {/* second unordered list */}
-      <ul className='flex flex-col  px-4 gap-4  justify-center text-black py-4  border-b-[1px] border-black'>
+      <ul className='flex flex-col  px-4 gap-4 bg-opacity-60 bg-gray-300 cursor-auto  justify-center text-black py-4  border-b-[1px] border-black'>
+      <p>Service not available</p>
+
         <h2 className='font-medium text-md'>Your Info </h2>
         <li className='flex gap-5  font-medium text-md'><span><img alt='Icon-channel' className='text-white w-4  h-4' src={Channel_Icon}/></span>Your Channel</li>
         <li className='flex gap-5  font-medium text-md'><span><i className="ri-file-history-fill w-5 h-5"></i></span>History</li>
@@ -26,7 +28,9 @@ const Sidebar = () => {
       </ul>
 
         {/* Third unordered list */}
-        <ul className='flex flex-col  px-4 gap-4  justify-center text-black py-4  border-b-[1px] border-black'>
+        <ul className='flex flex-col bg-opacity-60 bg-gray-300  cursor-default px-4 gap-4  justify-center text-black py-4  border-b-[1px] border-black'>
+      <p>Service not available</p>
+
         <h2 className='font-medium text-md'>Explore</h2>
         <li className='flex gap-5  font-medium text-md'><span><img alt='Icon-channel' className='text-white w-5  h-5' src={Trenidng_Icon}/></span>Trending</li>
         <li className='flex gap-5  font-medium text-md'><span><i className="ri-shopping-bag-fill w-9 h-9"></i></span>Shopping</li>
