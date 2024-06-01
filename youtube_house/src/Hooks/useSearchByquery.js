@@ -13,7 +13,6 @@ const useSearchByquery = (query) => {
     const getSearchVideo = async () => {
         const data = await fetch(SearchByQuery + query);
         const json = await data.json();
-        console.log(json);
         dispatch(addSearchedData(json))
     }
     return <></>

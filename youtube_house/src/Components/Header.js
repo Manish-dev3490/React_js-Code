@@ -68,6 +68,9 @@ export const Header = () => {
         dispatch(addSuggestion(json[1]))
     }
 
+    const handleSuggestion=(e)=>{
+        SetInputText(e.target.value)
+    }
 
     const handleSearch=()=>{
         if(inputText){
@@ -96,8 +99,8 @@ export const Header = () => {
             </div>
             
             {suggestion?<div className=' w-[432px]  px-2 bg-white rounded-md text-black  h-auto absolute z-50  top-20  '>
-            <ul className=' text-md  font-medium'>
-                {suggestion.map((s)=><li key={s} className='shadow-sm mt-2 hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i>{s}</li>)}
+            <ul className=' text-md  font-medium' onClick={(e)=>SetInputText(e.target.textContent)}>
+                {suggestion.map((s)=><li key={s}  className='shadow-sm mt-2 hover:bg-gray-200 cursor-pointer'><i className =" mr-2 ri-search-line"></i> {s}</li>)}
         
             </ul>
             </div>:""}

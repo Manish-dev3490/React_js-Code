@@ -7,7 +7,6 @@ const SearchResults = () => {
     const query=useSelector((store)=>store?.Videos?.inputText);
     const results=useSelector((store)=>store?.Videos?.searchedData);
     const {items}=results
-    console.log(results);
     useSearchByquery(query);
   return (
     <div className=' pl-60 flex flex-col'>
