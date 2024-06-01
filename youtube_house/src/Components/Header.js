@@ -68,14 +68,12 @@ export const Header = () => {
         dispatch(addSuggestion(json[1]))
     }
 
-    const handleSuggestion=(e)=>{
-        SetInputText(e.target.value)
-    }
+
 
     const handleSearch=()=>{
-        if(inputText){
+        
             navigate("/SearchPage");
-        }
+        
     }
 
     const handleinputfield=(e)=>{
